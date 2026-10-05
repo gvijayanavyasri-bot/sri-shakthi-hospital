@@ -1,4 +1,5 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -6,107 +7,47 @@ function Footer() {
 
       <div className="container footer-grid">
 
-        <div className="footer-brand">
-
+        <div>
           <div className="footer-logo">
-            <div className="logo-icon">
-              +
-            </div>
-
-            <div>
-              <h2>Sri Sakthi</h2>
-              <span>HOSPITAL</span>
-            </div>
+            ✚ Sri Shakthi
           </div>
 
           <p>
-            Compassionate healthcare, trusted medicine
-            and advanced healing.
+            Providing trusted healthcare with compassion,
+            professionalism and dedication.
           </p>
-
         </div>
 
-        <div className="footer-column">
+        <div>
+          <h3>Quick Links</h3>
 
-          <h3>
-            Quick Links
-          </h3>
-
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#doctor">Doctor</a>
-          <a href="#contact">Contact</a>
-
+          <Link to="/about">About Us</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/doctor">Doctors</Link>
+          <Link to="/facilities">Facilities</Link>
         </div>
 
-        <div className="footer-column">
+        <div>
+          <h3>Patient Care</h3>
 
-          <h3>
-            Services
-          </h3>
-
-          <a href="#services">
-            Outpatient Care
-          </a>
-
-          <a href="#services">
-            Inpatient Care
-          </a>
-
-          <a href="#services">
-            Laboratory
-          </a>
-
-          <a href="#services">
-            Pharmacy
-          </a>
-
-          <a href="#services">
-            Emergency Care
-          </a>
-
+          <Link to="/appointment">Appointments</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/gallery">Gallery</Link>
         </div>
 
-        <div className="footer-column">
+        <div>
+          <h3>Contact</h3>
 
-          <h3>
-            Contact
-          </h3>
-
-          <a href="tel:9494456007">
-            9494456007
-          </a>
-
-          <a href="tel:08832422189">
-            0883-2422189
-          </a>
-
-          <a href="mailto:srisakthihospitalrjy@gmail.com">
-            Email Us
-          </a>
-
-          <p>
-            Rajahmundry,
-            <br />
-            Andhra Pradesh
-          </p>
-
+          <p>123 Main Road</p>
+          <p>Rajahmundry, Andhra Pradesh</p>
+          <p>+91 98765 43210</p>
+          <p>info@srishakthi.com</p>
         </div>
 
       </div>
 
       <div className="footer-bottom">
-
-        <p>
-          © {new Date().getFullYear()} Sri Sakthi Hospital.
-          All Rights Reserved.
-        </p>
-
-        <p>
-          Compassion • Excellence • Trust
-        </p>
-
+        © 2026 Sri Shakthi Hospital. All Rights Reserved.
       </div>
 
     </footer>

@@ -1,8 +1,9 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero" id="home">
+    <section className="hero">
 
       <div className="hero-overlay"></div>
 
@@ -10,52 +11,29 @@ function Hero() {
 
         <div className="hero-text">
 
-          <div className="small-title">
-            SRI SAKTHI HOSPITAL
-          </div>
+          <span className="section-label">
+            Excellence in Healthcare
+          </span>
 
           <h1>
-            Compassionate Care.
+            Your Health.
             <br />
-            <span>Trusted Medicine.</span>
-            <br />
-            Advanced Healing.
+            Our <span>Commitment.</span>
           </h1>
 
           <p>
-            Patient-focused healthcare with clinical expertise,
-            modern medical standards and genuine human care.
+            Providing trusted medical care with compassion,
+            experience and modern healthcare facilities.
           </p>
 
           <div className="hero-buttons">
+            <Link to="/appointment" className="btn btn-primary">
+              Book an Appointment
+            </Link>
 
-            <a href="#appointment" className="btn primary-btn">
-              Book Appointment
-            </a>
-
-            <a href="tel:9494456007" className="btn outline-btn">
-              Call Now
-            </a>
-
-          </div>
-
-          <div className="hero-info">
-
-            <div>
-              <strong>15+</strong>
-              <span>Years Experience</span>
-            </div>
-
-            <div>
-              <strong>24/7</strong>
-              <span>Emergency Care</span>
-            </div>
-
-            <div>
-              <strong>OPD</strong>
-              <span>Patient Care</span>
-            </div>
-
+            <Link to="/services" className="btn btn-outline">
+              Explore Services
+            </Link>
           </div>
 
         </div>

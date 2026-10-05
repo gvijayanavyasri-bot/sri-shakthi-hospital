@@ -1,0 +1,543 @@
+/* =====================================================
+   SRI SAKTHI HOSPITAL
+   FACILITIES PAGE
+   CLASSIC + PROFESSIONAL DESIGN
+===================================================== */
+
+.facilities-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f6f0;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.facilities-header {
+  min-height: 430px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 42, 56, 0.97),
+      rgba(7, 42, 56, 0.86),
+      rgba(7, 42, 56, 0.60)
+    ),
+    url("https://www.srisakthihospital.com/assets/doctor-photo-EMUL-gY8.jpg");
+
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid #c59b42;
+}
+
+.facilities-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #c59b42;
+}
+
+.facilities-header-content {
+  width: min(1200px, 88%);
+  margin: 50px auto 0;
+  position: relative;
+  z-index: 2;
+}
+
+.facilities-header-content p {
+  margin: 0 0 18px;
+  color: #d4ae5d;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.facilities-header-content h1 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.facilities-header-content span {
+  display: block;
+  max-width: 650px;
+  color: #eeeeee;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.facilities-content {
+  max-width: 1250px;
+  margin: auto;
+  padding: 105px 30px 120px;
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.facilities-intro {
+  max-width: 720px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.section-label {
+  margin-bottom: 16px;
+  color: #8f671d;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.facilities-intro h2 {
+  margin: 0;
+  color: #102a43;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.facilities-intro h2 span {
+  color: #8f671d;
+  font-weight: 800;
+}
+
+.facilities-intro .gold-line {
+  width: 65px;
+  height: 3px;
+  margin: 25px auto;
+  background: #c59b42;
+}
+
+.facilities-intro > p:last-child {
+  color: #222222;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   FACILITIES GRID
+===================================================== */
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* =====================================================
+   FACILITY CARD
+===================================================== */
+
+.facility-card {
+  min-height: 330px;
+  position: relative;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e2ddd2;
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Gold vertical hover line */
+
+.facility-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 0;
+  background: #c59b42;
+  transition: height 0.4s ease;
+}
+
+.facility-card:hover::before {
+  height: 100%;
+}
+
+.facility-card:hover {
+  transform: translateY(-8px);
+  border-color: #c8ad70;
+  box-shadow: 0 20px 45px rgba(19, 57, 72, 0.13);
+}
+
+/* =====================================================
+   FEATURED CARD
+===================================================== */
+
+.featured-card {
+  background:
+    linear-gradient(
+      145deg,
+      #153d4d,
+      #214f60
+    );
+
+  border-color: #153d4d;
+}
+
+.featured-card h3 {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.featured-card p {
+  color: #eeeeee;
+  font-weight: 500;
+}
+
+.featured-card .facility-footer {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* =====================================================
+   CARD NUMBER
+===================================================== */
+
+.facility-number {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+
+  color: #8f671d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Featured number */
+
+.featured-card .facility-number {
+  color: #dfc487;
+}
+
+/* =====================================================
+   FACILITY ICON
+===================================================== */
+
+.facility-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #c59b42;
+  border-radius: 50%;
+
+  color: #8f671d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+
+  transition:
+    all 0.35s ease;
+}
+
+.facility-card:hover .facility-icon {
+  background: #c59b42;
+  color: #ffffff;
+  transform: rotate(8deg);
+}
+
+.featured-card .facility-icon {
+  color: #d4ae5d;
+}
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.facility-card h3 {
+  margin: 28px 0 15px;
+
+  color: #111111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.facility-card p {
+  max-width: 330px;
+
+  color: #222222;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.85;
+}
+
+/* =====================================================
+   CARD FOOTER
+===================================================== */
+
+.facility-footer {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 24px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #ebe7de;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #8f671d;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.facility-footer span:first-child {
+  color: #8f671d;
+  font-weight: 900;
+}
+
+.facility-footer span:last-child {
+  color: #102a43;
+  font-size: 20px;
+  font-weight: 900;
+
+  transition: transform 0.3s ease;
+}
+
+.facility-card:hover .facility-footer span:last-child {
+  transform: translateX(6px);
+}
+
+/* Featured footer */
+
+.featured-card .facility-footer {
+  color: #ffffff;
+}
+
+.featured-card .facility-footer span:first-child,
+.featured-card .facility-footer span:last-child {
+  color: #ffffff;
+}
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.facilities-cta {
+  padding: 75px max(30px, calc((100% - 1250px) / 2));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  background: #153d4d;
+  border-top: 3px solid #c59b42;
+}
+
+.facilities-cta p {
+  margin: 0 0 10px;
+
+  color: #d3ac59;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.facilities-cta h2 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.facilities-cta span {
+  color: #eeeeee;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.facilities-cta a {
+  flex-shrink: 0;
+
+  padding: 16px 28px;
+
+  background: #c59b42;
+  color: #102a43;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 900;
+
+  transition: all 0.3s ease;
+}
+
+.facilities-cta a:hover {
+  background: #aa812f;
+  color: #ffffff;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .facilities-header {
+    min-height: 390px;
+  }
+
+  .facilities-content {
+    padding: 85px 25px 100px;
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facilities-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .facilities-header {
+    min-height: 400px;
+  }
+
+  .facilities-header-content {
+    width: 84%;
+    margin-top: 65px;
+  }
+
+  .facilities-header-content h1 {
+    font-size: 45px;
+  }
+
+  .facilities-header-content span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .facilities-content {
+    padding: 70px 20px 80px;
+  }
+
+  .facilities-intro {
+    margin-bottom: 45px;
+  }
+
+  .facilities-intro h2 {
+    font-size: 37px;
+  }
+
+  .facilities-intro > p:last-child {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-card {
+    min-height: 320px;
+  }
+
+  .facility-card h3 {
+    font-size: 23px;
+  }
+
+  .facility-card p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .facilities-cta {
+    padding: 60px 20px;
+  }
+
+  .facilities-cta h2 {
+    font-size: 32px;
+  }
+
+  .facilities-cta a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL DEVICES
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .facilities-header {
+    min-height: 380px;
+  }
+
+  .facilities-header-content h1 {
+    font-size: 38px;
+  }
+
+  .facilities-content {
+    padding: 60px 16px 70px;
+  }
+
+  .facility-card {
+    padding: 27px;
+  }
+
+  .facility-footer {
+    left: 27px;
+    right: 27px;
+  }
+
+  .facilities-cta h2 {
+    font-size: 28px;
+  }
+}

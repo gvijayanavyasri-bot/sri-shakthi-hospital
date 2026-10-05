@@ -1,0 +1,2241 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap");
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+  --navy: #102f3c;
+  --navy-dark: #071f29;
+  --navy-deep: #061820;
+
+  --teal: #176b72;
+  --teal-dark: #0f555b;
+  --teal-light: #23848a;
+
+  --gold: #b9914b;
+  --gold-light: #d7b56d;
+
+  --cream: #f7f5ef;
+  --cream-dark: #eeece4;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --text: #111111;
+  --text-dark: #080808;
+  --muted: #333333;
+
+  --border: rgba(16, 47, 60, 0.13);
+
+  --shadow-sm: 0 8px 25px rgba(7, 31, 41, 0.08);
+  --shadow-md: 0 18px 45px rgba(7, 31, 41, 0.14);
+  --shadow-lg: 0 30px 70px rgba(7, 31, 41, 0.18);
+
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  --transition: 0.35s ease;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--white);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+.about-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.about-page p {
+  margin: 0;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+  margin: 0;
+  color: var(--navy-dark);
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+.about-page a {
+  text-decoration: none;
+}
+
+.about-page em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: 110px 0;
+}
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 20px;
+
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-label span {
+  width: 34px;
+  height: 2px;
+  display: inline-block;
+  background: var(--gold);
+}
+
+.section-label.light {
+  color: #ffffff;
+}
+
+.centered-label {
+  justify-content: center;
+}
+
+/* =========================================================
+   DOCTOR HERO
+========================================================= */
+
+.doctor-hero {
+  position: relative;
+  min-height: 760px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8f7f2 0%,
+      #ffffff 48%,
+      #edf5f4 100%
+    );
+
+  isolation: isolate;
+}
+
+.doctor-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(185, 145, 75, 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(23, 107, 114, 0.1),
+      transparent 30%
+    );
+
+  animation: backgroundPulse 8s ease-in-out infinite alternate;
+}
+
+.doctor-hero-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: 85px;
+}
+
+/* =========================================================
+   DOCTOR IMAGE
+========================================================= */
+
+.doctor-visual {
+  position: relative;
+  max-width: 510px;
+}
+
+.doctor-image-box {
+  position: relative;
+  padding: 18px;
+}
+
+.doctor-image-border {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid var(--gold);
+
+  transform: translate(18px, 18px);
+
+  z-index: 0;
+
+  transition:
+    transform 0.6s ease,
+    border-color 0.6s ease;
+}
+
+.doctor-image-box::before {
+  content: "";
+
+  position: absolute;
+  left: -12px;
+  top: 60px;
+
+  width: 5px;
+  height: 145px;
+
+  background: var(--teal);
+
+  z-index: 3;
+
+  transition:
+    height 0.5s ease,
+    background 0.5s ease;
+}
+
+.doctor-image-box img {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 570px;
+
+  object-fit: cover;
+  object-position: center top;
+
+  border-radius: 4px;
+
+  box-shadow: var(--shadow-lg);
+
+  animation: doctorFloat 5s ease-in-out infinite;
+
+  transition:
+    transform 0.7s ease,
+    box-shadow 0.7s ease,
+    filter 0.7s ease;
+}
+
+.doctor-image-box:hover img {
+  transform: scale(1.035) translateY(-7px);
+
+  box-shadow:
+    0 38px 85px rgba(7, 31, 41, 0.27);
+
+  filter:
+    saturate(1.08)
+    contrast(1.03);
+}
+
+.doctor-image-box:hover .doctor-image-border {
+  transform: translate(10px, 10px);
+  border-color: var(--teal);
+}
+
+.doctor-image-box:hover::before {
+  height: 180px;
+  background: var(--gold);
+}
+
+/* =========================================================
+   IMAGE SHINE
+========================================================= */
+
+.doctor-image-box::after {
+  content: "";
+
+  position: absolute;
+  z-index: 4;
+
+  top: 18px;
+  left: -80%;
+
+  width: 45%;
+  height: calc(100% - 36px);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  animation: imageShine 6s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   EXPERIENCE BADGE
+========================================================= */
+
+.doctor-experience-badge {
+  position: absolute;
+
+  right: -28px;
+  bottom: 35px;
+
+  z-index: 6;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 18px 22px;
+
+  background: var(--gold);
+  color: var(--white);
+
+  box-shadow: var(--shadow-md);
+
+  animation: badgeFloat 4s ease-in-out infinite;
+
+  transition:
+    background 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.doctor-experience-badge:hover {
+  background: var(--teal);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.doctor-experience-badge strong {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.doctor-experience-badge span {
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DOCTOR IMAGE CAPTION
+========================================================= */
+
+.doctor-image-caption {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 28px;
+  padding-left: 20px;
+
+  border-left: 3px solid var(--gold);
+
+  transition:
+    border-color 0.35s ease,
+    padding-left 0.35s ease;
+}
+
+.doctor-image-caption:hover {
+  border-color: var(--teal);
+  padding-left: 26px;
+}
+
+.doctor-image-caption span {
+  margin-bottom: 6px;
+
+  color: var(--teal);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.doctor-image-caption strong {
+  color: var(--navy-dark);
+
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DOCTOR HERO CONTENT
+========================================================= */
+
+.doctor-hero-content h1 {
+  margin-bottom: 24px;
+
+  color: var(--navy-dark);
+
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
+
+.doctor-hero-content h1 em {
+  color: var(--teal);
+
+  transition: color 0.35s ease;
+}
+
+.doctor-hero-content h1:hover em {
+  color: var(--gold);
+}
+
+.doctor-hero-content h2 {
+  margin-bottom: 25px;
+
+  color: #172f38;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.doctor-hero-content h2 span {
+  color: var(--teal);
+
+  transition: color 0.35s ease;
+}
+
+.doctor-hero-content h2:hover span {
+  color: var(--gold);
+}
+
+.doctor-qualifications {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 27px;
+
+  color: var(--navy);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.doctor-qualifications b {
+  color: var(--gold);
+}
+
+.doctor-hero-content > p {
+  max-width: 650px;
+
+  margin-bottom: 16px;
+
+  color: #000000 !important;
+
+  font-size: 15px;
+  font-weight: 800 !important;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   SPECIALTIES
+========================================================= */
+
+.doctor-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.specialty-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 15px 17px;
+
+  border: 1px solid var(--border);
+
+  background: rgba(255, 255, 255, 0.85);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--teal);
+
+  background: #eef7f6;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.specialty-card span {
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.specialty-card strong {
+  color: var(--navy-dark);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  transition: color 0.3s ease;
+}
+
+.specialty-card:hover strong {
+  color: var(--teal);
+}
+
+/* =========================================================
+   DOCTOR BUTTONS
+========================================================= */
+
+.doctor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  margin-top: 28px;
+}
+
+.primary-button,
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 52px;
+  padding: 0 25px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.primary-button {
+  background: var(--navy);
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 25px rgba(16, 47, 60, 0.16);
+}
+
+.primary-button:hover {
+  transform: translateY(-4px);
+
+  background: var(--teal);
+
+  box-shadow:
+    0 16px 32px rgba(16, 47, 60, 0.22);
+}
+
+.outline-button {
+  border: 1px solid var(--navy);
+
+  color: var(--navy);
+  background: transparent;
+}
+
+.outline-button:hover {
+  transform: translateY(-4px);
+
+  background: var(--gold);
+  border-color: var(--gold);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 28px rgba(185, 145, 75, 0.22);
+}
+
+.primary-button span,
+.outline-button span {
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+.primary-button:hover span,
+.outline-button:hover span {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   HOSPITAL INTRO
+========================================================= */
+
+.hospital-intro {
+  background: var(--white);
+}
+
+.intro-grid {
+  display: grid;
+
+  grid-template-columns: 0.95fr 1.05fr;
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+/* =========================================================
+   HOSPITAL IMAGE
+========================================================= */
+
+.hospital-image {
+  position: relative;
+}
+
+.hospital-image-frame {
+  position: relative;
+
+  padding: 14px;
+
+  background: var(--cream);
+
+  border: 1px solid rgba(185, 145, 75, 0.45);
+}
+
+.hospital-image-frame::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid var(--gold);
+
+  transform: translate(14px, 14px);
+
+  z-index: 0;
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.hospital-image-frame img {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 520px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.hospital-image-frame:hover img {
+  transform: scale(1.035);
+
+  filter:
+    saturate(1.08)
+    contrast(1.03);
+}
+
+.hospital-image-frame:hover::before {
+  transform: translate(8px, 8px);
+  border-color: var(--teal);
+}
+
+.hospital-image::after {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  right: -25px;
+  top: -25px;
+
+  border-top: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+
+  pointer-events: none;
+
+  transition:
+    width 0.4s ease,
+    height 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.hospital-image:hover::after {
+  width: 105px;
+  height: 105px;
+
+  border-color: var(--teal);
+}
+
+/* =========================================================
+   HOSPITAL IMAGE BADGE
+========================================================= */
+
+.hospital-image-badge {
+  position: absolute;
+
+  left: -25px;
+  bottom: 35px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 17px 21px;
+
+  background: var(--navy);
+  color: #ffffff;
+
+  box-shadow: var(--shadow-md);
+
+  animation: badgeFloat 4.5s ease-in-out infinite;
+
+  transition:
+    background 0.4s ease,
+    transform 0.4s ease;
+}
+
+.hospital-image-badge:hover {
+  background: var(--teal);
+  transform: translateY(-7px);
+}
+
+.hospital-image-badge strong {
+  color: var(--gold-light);
+
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+
+.hospital-image-badge span {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.45;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   HOSPITAL INTRO CONTENT
+========================================================= */
+
+.hospital-intro-content h2 {
+  margin-bottom: 28px;
+
+  color: var(--navy-dark);
+
+  font-size: clamp(36px, 4vw, 54px);
+
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.hospital-intro-content h2 em {
+  color: var(--teal);
+
+  transition: color 0.35s ease;
+}
+
+.hospital-intro-content h2:hover em {
+  color: var(--gold);
+}
+
+.hospital-intro-content > p {
+  max-width: 680px;
+
+  margin-bottom: 18px;
+
+  color: #000000 !important;
+
+  font-size: 16px;
+  font-weight: 800 !important;
+
+  line-height: 1.9;
+}
+
+/* =========================================================
+   HOSPITAL HIGHLIGHTS
+========================================================= */
+
+.hospital-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 32px;
+}
+
+.hospital-highlights > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid rgba(16, 47, 60, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hospital-highlights > div:hover {
+  transform: translateX(5px);
+  border-color: var(--gold);
+}
+
+.hospital-highlights > div > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(23, 107, 114, 0.1);
+
+  color: var(--teal);
+
+  font-weight: 900;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hospital-highlights > div:hover > span {
+  background: var(--teal);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.hospital-highlights strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #000000;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.hospital-highlights small {
+  display: block;
+
+  color: #111111;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   HOSPITAL BANNER
+========================================================= */
+
+.hospital-banner {
+  position: relative;
+
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(7, 31, 41, 0.98),
+      rgba(16, 47, 60, 0.91)
+    );
+
+  overflow: hidden;
+}
+
+.hospital-banner-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(185, 145, 75, 0.16),
+      transparent 30%
+    );
+
+  animation: bannerGlow 7s ease-in-out infinite alternate;
+}
+
+.hospital-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hospital-banner h2 {
+  max-width: 760px;
+
+  margin-bottom: 24px;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  line-height: 1.04;
+}
+
+.hospital-banner h2 em {
+  color: var(--gold-light);
+
+  transition: color 0.35s ease;
+}
+
+.hospital-banner h2:hover em {
+  color: #ffffff;
+}
+
+.hospital-banner p {
+  max-width: 650px;
+
+  margin-bottom: 25px;
+
+  color: #ffffff !important;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.8;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.breadcrumb a {
+  color: var(--gold-light);
+
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: #ffffff;
+}
+
+.breadcrumb strong {
+  color: #ffffff;
+}
+
+/* =========================================================
+   VALUES SECTION
+========================================================= */
+
+.values-section {
+  background: var(--cream);
+}
+
+.section-heading {
+  max-width: 760px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin-bottom: 22px;
+
+  color: var(--navy-dark);
+
+  font-size: clamp(36px, 4vw, 52px);
+
+  line-height: 1.08;
+}
+
+.section-heading h2 em {
+  color: var(--teal);
+
+  transition: color 0.35s ease;
+}
+
+.section-heading h2:hover em {
+  color: var(--gold);
+}
+
+.section-heading > p {
+  color: #000000 !important;
+
+  font-size: 16px;
+  font-weight: 800 !important;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   VALUE GRID
+========================================================= */
+
+.values-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+/* =========================================================
+   VALUE CARD
+========================================================= */
+
+.value-card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 34px 30px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(16, 47, 60, 0.1);
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    background 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Gold top line */
+
+.value-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: var(--gold);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.45s ease;
+}
+
+/* Decorative circle */
+
+.value-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -70px;
+  bottom: -70px;
+
+  border: 1px solid rgba(185, 145, 75, 0.2);
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+
+  background: var(--teal);
+
+  border-color: var(--teal);
+
+  box-shadow:
+    0 25px 50px rgba(7, 31, 41, 0.2);
+}
+
+.value-card:hover::before {
+  transform: scaleX(1);
+}
+
+.value-card:hover::after {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* =========================================================
+   VALUE TOP
+========================================================= */
+
+.value-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+.value-top span {
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  transition: color 0.35s ease;
+}
+
+.value-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(23, 107, 114, 0.08);
+
+  color: var(--teal);
+
+  font-size: 21px;
+  font-style: normal;
+
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* =========================================================
+   VALUE TITLE
+========================================================= */
+
+.value-card h3 {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 17px;
+
+  color: var(--navy-dark);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* =========================================================
+   VALUE DESCRIPTION
+========================================================= */
+
+.value-card p {
+  position: relative;
+  z-index: 2;
+
+  color: #000000 !important;
+
+  font-size: 14px;
+  font-weight: 800 !important;
+
+  line-height: 1.8;
+
+  transition: color 0.35s ease;
+}
+
+/* =========================================================
+   VALUE LINE
+========================================================= */
+
+.value-line {
+  position: relative;
+  z-index: 2;
+
+  width: 45px;
+  height: 2px;
+
+  margin-top: 28px;
+
+  background: var(--gold);
+
+  transition:
+    width 0.4s ease,
+    background 0.35s ease;
+}
+
+/* =========================================================
+   VALUE HOVER
+========================================================= */
+
+.value-card:hover h3 {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+.value-card:hover p {
+  color: #ffffff !important;
+}
+
+.value-card:hover .value-top span {
+  color: var(--gold-light);
+}
+
+.value-card:hover .value-top i {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  transform: scale(1.1) rotate(5deg);
+}
+
+.value-card:hover .value-line {
+  width: 75px;
+
+  background: var(--gold-light);
+}
+
+/* =========================================================
+   FEATURED VALUE CARD
+========================================================= */
+
+.value-card.featured {
+  background: var(--navy);
+
+  border-color: var(--navy);
+
+  box-shadow:
+    0 18px 40px rgba(7, 31, 41, 0.16);
+}
+
+.value-card.featured h3 {
+  color: #ffffff;
+}
+
+.value-card.featured p {
+  color: #ffffff !important;
+}
+
+.value-card.featured .value-top span {
+  color: var(--gold-light);
+}
+
+.value-card.featured .value-top i {
+  color: var(--gold-light);
+
+  background: rgba(185, 145, 75, 0.12);
+}
+
+.value-card.featured:hover {
+  background: var(--teal);
+
+  border-color: var(--teal);
+
+  transform: translateY(-10px);
+}
+
+.value-card.featured:hover .value-top i {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   MISSION & VISION
+========================================================= */
+
+.mission-section {
+  padding: 100px 0;
+
+  background: #ffffff;
+}
+
+.mission-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 0;
+}
+
+.mission-card {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 55px;
+
+  background: var(--cream);
+
+  border: 1px solid rgba(16, 47, 60, 0.1);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.mission-card.dark {
+  background: var(--navy);
+
+  border-color: var(--navy);
+}
+
+.mission-card.dark:hover {
+  background: var(--teal);
+}
+
+.mission-number {
+  position: absolute;
+
+  top: 30px;
+  right: 35px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.mission-label {
+  margin-bottom: 25px;
+
+  color: var(--teal);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.mission-card.dark .mission-label {
+  color: var(--gold-light);
+}
+
+.mission-icon {
+  margin-bottom: 20px;
+
+  color: var(--gold);
+
+  font-size: 27px;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.mission-card:hover .mission-icon {
+  transform: scale(1.12) rotate(5deg);
+
+  color: var(--teal);
+}
+
+.mission-card.dark:hover .mission-icon {
+  color: var(--gold-light);
+}
+
+.mission-card h3 {
+  max-width: 430px;
+
+  margin-bottom: 20px;
+
+  color: var(--navy-dark);
+
+  font-size: 31px;
+  line-height: 1.2;
+}
+
+.mission-card.dark h3 {
+  color: #ffffff;
+}
+
+.mission-card p {
+  max-width: 500px;
+
+  color: #000000 !important;
+
+  font-size: 14px;
+  font-weight: 800 !important;
+
+  line-height: 1.8;
+}
+
+.mission-card.dark p {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section {
+  background: var(--cream);
+}
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.service-card {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 30px 25px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(16, 47, 60, 0.1);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--gold);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  background: #f2f9f8;
+
+  border-color: var(--teal);
+
+  box-shadow: var(--shadow-md);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-number {
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 30px 0 23px;
+
+  border-radius: 50%;
+
+  background: rgba(23, 107, 114, 0.09);
+
+  color: var(--teal);
+
+  font-size: 22px;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(8deg) scale(1.08);
+
+  background: var(--teal);
+
+  color: #ffffff;
+}
+
+.service-icon.emergency {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.service-card h3 {
+  margin-bottom: 14px;
+
+  color: var(--navy-dark);
+
+  font-size: 21px;
+
+  line-height: 1.25;
+
+  transition: color 0.35s ease;
+}
+
+.service-card:hover h3 {
+  color: var(--teal);
+}
+
+.service-card p {
+  color: #000000 !important;
+
+  font-size: 13px;
+  font-weight: 800 !important;
+
+  line-height: 1.75;
+}
+
+.service-arrow {
+  position: absolute;
+
+  right: 25px;
+  bottom: 22px;
+
+  color: var(--gold);
+
+  font-size: 21px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+  transform: translateX(7px);
+
+  color: var(--teal);
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-cta {
+  position: relative;
+
+  padding: 95px 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      var(--navy-dark),
+      var(--navy)
+    );
+
+  overflow: hidden;
+}
+
+.cta-pattern {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.3;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(255, 255, 255, 0.04) 49%,
+      rgba(255, 255, 255, 0.04) 51%,
+      transparent 52%
+    );
+
+  background-size: 32px 32px;
+
+  animation: patternMove 18s linear infinite;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.cta-content h2 {
+  margin-bottom: 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4vw, 56px);
+
+  line-height: 1.08;
+}
+
+.cta-content h2 em {
+  color: var(--gold-light);
+
+  transition: color 0.35s ease;
+}
+
+.cta-content h2:hover em {
+  color: #ffffff;
+}
+
+.cta-content p {
+  max-width: 600px;
+
+  margin-bottom: 27px;
+
+  color: #ffffff !important;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.8;
+}
+
+.consultation-time {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px 25px;
+}
+
+.consultation-time span {
+  width: 100%;
+
+  color: var(--gold-light);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.consultation-time strong {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cta-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 245px;
+
+  gap: 13px;
+}
+
+.cta-button,
+.phone-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 58px;
+
+  padding: 0 22px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.cta-button {
+  background: var(--gold);
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+
+  background: var(--teal);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button span {
+  font-size: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover span {
+  transform: translateX(6px);
+}
+
+.phone-button {
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+}
+
+.phone-button:hover {
+  transform: translateY(-4px);
+
+  background: var(--teal);
+
+  border-color: var(--teal);
+}
+
+.phone-button small {
+  margin-bottom: 4px;
+
+  color: var(--gold-light);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.phone-button strong {
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
+
+.reveal-left {
+  animation: revealLeft 0.9s ease both;
+}
+
+.reveal-right {
+  animation: revealRight 0.9s ease both;
+}
+
+.reveal-up {
+  animation: revealUp 0.85s ease both;
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes doctorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes imageShine {
+  0% {
+    left: -80%;
+  }
+
+  25%,
+  100% {
+    left: 130%;
+  }
+}
+
+@keyframes backgroundPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes bannerGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes patternMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 160px 160px;
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealRight {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .about-container {
+    width: min(920px, calc(100% - 40px));
+  }
+
+  .doctor-hero-grid,
+  .intro-grid {
+    gap: 50px;
+  }
+
+  .doctor-hero-content h1 {
+    font-size: 50px;
+  }
+
+  .doctor-image-box img {
+    height: 500px;
+  }
+
+  .hospital-image-frame img {
+    height: 450px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  .doctor-hero {
+    padding: 80px 0;
+  }
+
+  .doctor-hero-grid,
+  .intro-grid,
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-visual {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-card {
+    min-height: auto;
+    padding: 45px 35px;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-actions {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .about-container {
+    width: calc(100% - 30px);
+  }
+
+  .section-padding {
+    padding: 65px 0;
+  }
+
+  .doctor-hero {
+    min-height: auto;
+    padding: 65px 0;
+  }
+
+  .doctor-image-box {
+    padding: 10px;
+  }
+
+  .doctor-image-border {
+    transform: translate(10px, 10px);
+  }
+
+  .doctor-image-box img {
+    height: 420px;
+  }
+
+  .doctor-image-box::before {
+    left: -4px;
+    top: 45px;
+    height: 100px;
+  }
+
+  .doctor-experience-badge {
+    right: -5px;
+    bottom: 25px;
+    padding: 13px 16px;
+  }
+
+  .doctor-experience-badge strong {
+    font-size: 25px;
+  }
+
+  .doctor-experience-badge span {
+    font-size: 9px;
+  }
+
+  .doctor-image-caption {
+    padding-left: 14px;
+  }
+
+  .doctor-image-caption strong {
+    font-size: 17px;
+  }
+
+  .doctor-hero-content h1 {
+    font-size: 42px;
+  }
+
+  .doctor-hero-content h2 {
+    font-size: 17px;
+  }
+
+  .doctor-qualifications {
+    gap: 7px;
+    font-size: 10px;
+  }
+
+  .doctor-specialties {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .outline-button {
+    width: 100%;
+  }
+
+  .hospital-image-frame {
+    padding: 9px;
+  }
+
+  .hospital-image-frame img {
+    height: 370px;
+  }
+
+  .hospital-image-badge {
+    left: -3px;
+    bottom: 22px;
+    padding: 13px 15px;
+  }
+
+  .hospital-image-badge strong {
+    font-size: 25px;
+  }
+
+  .hospital-highlights {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hospital-banner {
+    min-height: 400px;
+  }
+
+  .hospital-banner h2 {
+    font-size: 40px;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+  }
+
+  .values-grid {
+    gap: 15px;
+  }
+
+  .value-card {
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .value-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .mission-section {
+    padding: 65px 0;
+  }
+
+  .mission-card {
+    padding: 40px 25px;
+  }
+
+  .mission-card h3 {
+    font-size: 27px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 280px;
+  }
+
+  .about-cta {
+    padding: 70px 0;
+  }
+
+  .cta-content h2 {
+    font-size: 40px;
+  }
+
+  .cta-actions {
+    max-width: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-image-box img,
+  .doctor-experience-badge,
+  .hospital-image-badge,
+  .doctor-image-box::after,
+  .doctor-hero-bg,
+  .hospital-banner-overlay,
+  .cta-pattern {
+    animation: none;
+  }
+
+  .reveal-left,
+  .reveal-right,
+  .reveal-up {
+    animation: none;
+  }
+
+  .doctor-image-box img,
+  .hospital-image-frame img,
+  .service-card,
+  .value-card,
+  .specialty-card,
+  .mission-card {
+    transition: none;
+  }
+}
