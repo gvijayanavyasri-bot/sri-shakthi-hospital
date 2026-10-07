@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -6,164 +7,143 @@ const doctorImage =
 
 function Home() {
   return (
-    <main className="home">
+    <main className="home-page">
 
-      {/* ================= HERO ================= */}
-      <section className="classic-hero">
+      {/* =====================================================
+          HERO SECTION
+      ===================================================== */}
 
-        <div className="hero-pattern"></div>
-        <div className="hero-glow hero-glow-one"></div>
-        <div className="hero-glow hero-glow-two"></div>
+      <section className="home-hero">
 
-        <div className="container hero-layout">
+        <div className="hero-background-shape hero-shape-one"></div>
+        <div className="hero-background-shape hero-shape-two"></div>
 
-          <div className="hero-copy">
+        <div className="home-container hero-container">
 
-            <div className="eyebrow fade-up">
-              <span className="eyebrow-dot"></span>
-              Sri Sakthi Hospital
-            </div>
+          {/* LEFT CONTENT */}
+          <div className="hero-content">
 
-            <h1 className="hero-title fade-up delay-1">
+            <span className="hero-label">
+              SRI SAKTHI HOSPITAL
+            </span>
+
+            <div className="hero-line"></div>
+
+            <h1>
               Compassionate Care.
               <br />
-
               <span>Trusted Medicine.</span>
-
               <br />
-              <strong>Advanced Healing.</strong>
+              Advanced Healing.
             </h1>
 
-            <p className="hero-description fade-up delay-2">
-              Providing patient-focused healthcare with clinical
-              excellence, compassion and trust for more than 15 years.
+            <p className="hero-description">
+              Patient-focused healthcare combining clinical expertise,
+              modern medical care and genuine human compassion for you
+              and your family.
             </p>
 
-            <div className="hero-buttons fade-up delay-3">
+            <div className="hero-buttons">
 
               <Link
                 to="/appointment"
-                className="gold-button"
+                className="home-btn home-btn-primary"
               >
                 <span>Book an Appointment</span>
-                <span className="button-arrow">→</span>
+                <strong>→</strong>
               </Link>
 
-              <Link
-                to="/services"
-                className="outline-button"
+              <a
+                href="tel:9494456007"
+                className="home-btn home-btn-outline"
               >
-                Explore Services
-                <span>→</span>
-              </Link>
+                <span>Call Hospital</span>
+                <strong>☎</strong>
+              </a>
 
             </div>
 
-            <div className="hero-stats fade-up delay-4">
+            <div className="hero-trust">
 
-              <div className="stat-item">
+              <div className="trust-item">
                 <strong>15+</strong>
-                <span>Years Clinical Experience</span>
+                <span>Years Clinical<br />Experience</span>
               </div>
 
-              <div className="stat-item">
+              <div className="trust-divider"></div>
+
+              <div className="trust-item">
                 <strong>24/7</strong>
-                <span>Emergency Care</span>
+                <span>Emergency<br />Care</span>
               </div>
 
-              <div className="stat-item">
-                <strong>3</strong>
-                <span>Languages Supported</span>
+              <div className="trust-divider"></div>
+
+              <div className="trust-item">
+                <strong>OPD</strong>
+                <span>Outpatient<br />Care</span>
               </div>
 
             </div>
 
           </div>
 
-          {/* HERO IMAGE */}
-          <div className="hero-visual">
+          {/* RIGHT DOCTOR */}
+          <div className="hero-doctor-area">
 
-            <div className="hero-image-border">
+            <div className="doctor-glow"></div>
 
-              <div className="image-shine"></div>
+            <div className="doctor-circle"></div>
 
+            <div className="doctor-image-wrapper">
               <img
-                src="/doctor.jpeg"
-                alt="Sri Sakthi Hospital"
+                src={doctorImage}
+                alt="Dr. Sakthi Narasimha Garikapati"
+                className="hero-doctor-image"
               />
-
             </div>
 
-            <div className="hero-doctor-card">
+            <div className="doctor-floating-card">
 
-              <div className="doctor-card-image">
-                <img
-                  src={doctorImage}
-                  alt="Dr. Sakthi Narasimha Garikapati"
-                />
-              </div>
+              <span className="doctor-card-label">
+                MEDICAL DIRECTOR
+              </span>
 
-              <div className="doctor-card-content">
-                <small>MEDICAL DIRECTOR</small>
+              <h3>
+                Dr. Sakthi Narasimha
+                <br />
+                Garikapati
+              </h3>
 
-                <h3>
-                  Dr. Sakthi Narasimha
-                  <br />
-                  Garikapati
-                </h3>
+              <p>
+                MBBS · DNB Family Medicine
+              </p>
 
-                <p>
-                  MBBS · DNB Family Medicine
-                </p>
+              <div className="doctor-experience">
+                <span>15+</span>
+                <small>Years of Clinical Excellence</small>
               </div>
 
             </div>
 
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ================= TRUST BAR ================= */}
-      <section className="trust-bar">
-
-        <div className="container trust-grid">
-
-          <div className="trust-item reveal-card">
-            <span className="trust-icon">+</span>
-
-            <div>
-              <strong>Compassion</strong>
-              <small>Genuine care for every patient</small>
+            <div className="floating-badge badge-one">
+              <span>✚</span>
+              <p>
+                Patient
+                <br />
+                First
+              </p>
             </div>
-          </div>
 
-          <div className="trust-item reveal-card">
-            <span className="trust-icon">✓</span>
-
-            <div>
-              <strong>Precision</strong>
-              <small>Accurate diagnosis & treatment</small>
+            <div className="floating-badge badge-two">
+              <span>♥</span>
+              <p>
+                Trusted
+                <br />
+                Care
+              </p>
             </div>
-          </div>
 
-          <div className="trust-item reveal-card">
-            <span className="trust-icon">◆</span>
-
-            <div>
-              <strong>Trust</strong>
-              <small>Healthcare built on confidence</small>
-            </div>
-          </div>
-
-          <div className="trust-item reveal-card">
-            <span className="trust-icon">24</span>
-
-            <div>
-              <strong>Emergency</strong>
-              <small>Round-the-clock assistance</small>
-            </div>
           </div>
 
         </div>
@@ -171,93 +151,117 @@ function Home() {
       </section>
 
 
-      {/* ================= ABOUT ================= */}
-      <section className="about-section section">
+      {/* =====================================================
+          TRUST STRIP
+      ===================================================== */}
 
-        <div className="container about-grid">
+      <section className="trust-strip">
 
-          <div className="about-photo reveal-left">
+        <div className="home-container trust-grid">
 
-            <div className="photo-decoration"></div>
-
-            <img
-              src="/doctor.jpeg"
-              alt="Sri Sakthi Hospital building"
-            />
-
-            <div className="about-badge">
-              <strong>15+</strong>
-              <span>Years of Clinical Excellence</span>
+          <div className="trust-box">
+            <div className="trust-icon">✚</div>
+            <div>
+              <h3>Patient First</h3>
+              <p>Personalized healthcare</p>
             </div>
-
           </div>
 
+          <div className="trust-box">
+            <div className="trust-icon">★</div>
+            <div>
+              <h3>Expert Care</h3>
+              <p>Experienced medical team</p>
+            </div>
+          </div>
 
-          <div className="about-content reveal-right">
+          <div className="trust-box">
+            <div className="trust-icon">◈</div>
+            <div>
+              <h3>Modern Facilities</h3>
+              <p>Comfortable environment</p>
+            </div>
+          </div>
 
-            <span className="section-kicker">
-              Welcome to Sri Sakthi Hospital
+          <div className="trust-box">
+            <div className="trust-icon">♥</div>
+            <div>
+              <h3>Emergency Support</h3>
+              <p>Care when you need it</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          WELCOME SECTION
+      ===================================================== */}
+
+      <section className="welcome-section">
+
+        <div className="home-container welcome-grid">
+
+          <div className="welcome-content">
+
+            <span className="section-label">
+              WELCOME TO SRI SAKTHI HOSPITAL
             </span>
 
             <h2>
-              Healthcare with
+              Healthcare built on
               <br />
-              <span>a personal touch</span>
+              <span>compassion and trust.</span>
             </h2>
 
-            <p className="strong-text">
+            <p className="welcome-lead">
               At Sri Sakthi Hospital, we believe great healthcare
               begins with compassion, precision and trust.
             </p>
 
             <p>
-              Our mission is to provide high-quality medical care
-              combined with genuine human care. From routine
-              consultations to complex medical conditions, our
-              patient-first approach ensures personalized attention.
+              Our patient-first approach combines clinical expertise
+              with genuine human care. From routine consultations
+              to complex medical conditions, we remain committed
+              to supporting your health at every stage of life.
             </p>
 
+            <div className="values-row">
 
-            <div className="about-values">
-
-              <div className="value-item">
+              <div className="value-card">
                 <span>01</span>
-
-                <div>
-                  <h4>Compassion</h4>
-                  <p>
-                    We treat every patient with empathy and respect.
-                  </p>
-                </div>
+                <h3>Compassion</h3>
+                <p>
+                  Every patient is treated with empathy,
+                  dignity and genuine care.
+                </p>
               </div>
 
-              <div className="value-item">
+              <div className="value-card">
                 <span>02</span>
-
-                <div>
-                  <h4>Clinical Excellence</h4>
-                  <p>
-                    Evidence-based diagnosis and treatment.
-                  </p>
-                </div>
+                <h3>Precision</h3>
+                <p>
+                  Accurate diagnosis and evidence-based
+                  treatment for better outcomes.
+                </p>
               </div>
 
-              <div className="value-item">
+              <div className="value-card">
                 <span>03</span>
-
-                <div>
-                  <h4>Patient First</h4>
-                  <p>
-                    Personalized care for every stage of life.
-                  </p>
-                </div>
+                <h3>Trust</h3>
+                <p>
+                  Building lasting relationships with
+                  patients and families.
+                </p>
               </div>
 
             </div>
 
             <Link
-              to="/hospital"
-              className="dark-button"
+              to="/about"
+              className="text-link"
             >
               Discover Our Hospital
               <span>→</span>
@@ -265,31 +269,113 @@ function Home() {
 
           </div>
 
+
+          <div className="welcome-visual">
+
+            <div className="visual-frame">
+
+              <div className="visual-top-line"></div>
+
+              <div className="visual-content">
+
+                <span className="visual-symbol">✚</span>
+
+                <h3>
+                  Compassion
+                  <br />
+                  <span>Excellence</span>
+                  <br />
+                  Trust
+                </h3>
+
+                <p>
+                  Providing quality healthcare
+                  with a personal touch.
+                </p>
+
+              </div>
+
+              <div className="visual-number">
+                <strong>15</strong>
+                <span>+</span>
+                <small>
+                  YEARS OF
+                  <br />
+                  EXPERIENCE
+                </small>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </section>
 
 
-      {/* ================= SERVICES ================= */}
-      <section className="services-section section">
+      {/* =====================================================
+          STATISTICS
+      ===================================================== */}
 
-        <div className="container">
+      <section className="stats-section">
 
-          <div className="section-heading reveal-up">
+        <div className="home-container stats-grid">
 
-            <span className="section-kicker">
-              Our Healthcare Services
+          <div className="stat-card">
+            <strong>15+</strong>
+            <span>Years of Clinical Excellence</span>
+          </div>
+
+          <div className="stat-card">
+            <strong>OPD</strong>
+            <span>Outpatient Consultation</span>
+          </div>
+
+          <div className="stat-card">
+            <strong>IPD</strong>
+            <span>Inpatient Care</span>
+          </div>
+
+          <div className="stat-card">
+            <strong>24/7</strong>
+            <span>Emergency Care</span>
+          </div>
+
+          <div className="stat-card">
+            <strong>DAY</strong>
+            <span>Day Care Services</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section className="services-section">
+
+        <div className="home-container">
+
+          <div className="section-heading">
+
+            <span className="section-label">
+              OUR HEALTHCARE SERVICES
             </span>
 
             <h2>
-              Comprehensive care
+              Complete healthcare
               <br />
-              <span>under one roof</span>
+              <span>under one roof.</span>
             </h2>
 
             <p>
-              Professional healthcare services designed around
-              your needs, comfort and wellbeing.
+              Comprehensive medical services delivered with
+              clinical expertise, compassion and a patient-first
+              approach.
             </p>
 
           </div>
@@ -297,48 +383,72 @@ function Home() {
 
           <div className="services-grid">
 
-            <article className="service-card">
-              <span className="service-number">01</span>
+            <article className="service-card service-featured">
 
-              <div className="service-icon">+</div>
+              <div className="service-number">01</div>
 
-              <h3>Outpatient Consultation</h3>
+              <div className="service-icon">
+                ✚
+              </div>
+
+              <h3>
+                Outpatient
+                <br />
+                Consultation
+              </h3>
 
               <p>
-                Personalized consultation and expert diagnosis
-                for general and specialized health conditions.
+                Personalized care for general and specialized
+                health conditions with thorough examination
+                and expert diagnosis.
               </p>
 
               <Link to="/services">
                 Learn More <span>→</span>
               </Link>
+
             </article>
 
 
             <article className="service-card">
-              <span className="service-number">02</span>
 
-              <div className="service-icon">♡</div>
+              <div className="service-number">02</div>
 
-              <h3>Inpatient Care</h3>
+              <div className="service-icon">
+                ♡
+              </div>
+
+              <h3>
+                Inpatient
+                <br />
+                Care
+              </h3>
 
               <p>
-                Comfortable admission with continuous
-                monitoring for patients requiring observation.
+                Comfortable admission and continuous monitoring
+                for patients requiring extended medical care.
               </p>
 
               <Link to="/services">
                 Learn More <span>→</span>
               </Link>
+
             </article>
 
 
             <article className="service-card">
-              <span className="service-number">03</span>
 
-              <div className="service-icon">✚</div>
+              <div className="service-number">03</div>
 
-              <h3>Diagnostic Laboratory</h3>
+              <div className="service-icon">
+                ◈
+              </div>
+
+              <h3>
+                Diagnostic
+                <br />
+                Laboratory
+              </h3>
 
               <p>
                 Accurate testing and timely reports supporting
@@ -348,37 +458,87 @@ function Home() {
               <Link to="/services">
                 Learn More <span>→</span>
               </Link>
+
             </article>
 
 
             <article className="service-card">
-              <span className="service-number">04</span>
 
-              <div className="service-icon">24</div>
+              <div className="service-number">04</div>
 
-              <h3>Emergency Care</h3>
+              <div className="service-icon">
+                +
+              </div>
+
+              <h3>
+                Day Care
+                <br />
+                Services
+              </h3>
 
               <p>
-                Round-the-clock emergency services supported
-                by experienced medical staff.
+                Short-term procedures and treatments allowing
+                patients to return home the same day.
               </p>
 
               <Link to="/services">
                 Learn More <span>→</span>
               </Link>
+
             </article>
 
-          </div>
+
+            <article className="service-card">
+
+              <div className="service-number">05</div>
+
+              <div className="service-icon">
+                ◉
+              </div>
+
+              <h3>
+                IV Therapy &
+                <br />
+                Nebulization
+              </h3>
+
+              <p>
+                Safe and effective treatment for acute and
+                chronic respiratory conditions.
+              </p>
+
+              <Link to="/services">
+                Learn More <span>→</span>
+              </Link>
+
+            </article>
 
 
-          <div className="center-action">
-            <Link
-              to="/services"
-              className="outline-dark-button"
-            >
-              View All Medical Services
-              <span>→</span>
-            </Link>
+            <article className="service-card emergency-card">
+
+              <div className="service-number">06</div>
+
+              <div className="service-icon">
+                !
+              </div>
+
+              <h3>
+                Emergency
+                <br />
+                Care
+              </h3>
+
+              <p>
+                Experienced staff ready to provide timely
+                medical assistance when you need it most.
+              </p>
+
+              <a href="tel:9494456007">
+                Call Now <span>☎</span>
+              </a>
+
+            </article>
+
           </div>
 
         </div>
@@ -386,49 +546,54 @@ function Home() {
       </section>
 
 
-      {/* ================= DOCTOR ================= */}
-      <section className="doctor-section section">
+      {/* =====================================================
+          DOCTOR SECTION
+      ===================================================== */}
 
-        <div className="container doctor-layout">
+      <section className="doctor-section">
 
-          <div className="doctor-photo-wrapper reveal-left">
+        <div className="doctor-section-pattern"></div>
 
-            <div className="doctor-photo-frame">
+        <div className="home-container doctor-grid">
 
-              <div className="doctor-image-glow"></div>
+          <div className="doctor-photo-area">
 
-              <img
-                src={doctorImage}
-                alt="Dr. Sakthi Narasimha Garikapati"
-              />
+            <div className="doctor-photo-border"></div>
 
-            </div>
+            <img
+              src={doctorImage}
+              alt="Dr. Sakthi Narasimha Garikapati"
+            />
 
-            <div className="doctor-experience">
-              <strong>15+</strong>
-              <span>Years Clinical Experience</span>
+            <div className="doctor-photo-caption">
+              <span>MEDICAL DIRECTOR</span>
+              <strong>15+ Years Experience</strong>
             </div>
 
           </div>
 
 
-          <div className="doctor-content reveal-right">
+          <div className="doctor-content">
 
-            <span className="section-kicker">
-              Meet Your Doctor
+            <span className="section-label">
+              MEET YOUR DOCTOR
             </span>
 
             <h2>
-              Dr. Sakthi Narasimha
+              Medical care with
               <br />
-              <span>Garikapati</span>
+              <span>experience & empathy.</span>
             </h2>
 
-            <div className="doctor-credentials">
-              MBBS · DNB Family Medicine · FCD · FIIM · PGPID
-            </div>
+            <h3>
+              Dr. Sakthi Narasimha Garikapati
+            </h3>
 
-            <p className="strong-text">
+            <p className="doctor-qualification">
+              MBBS · DNB Family Medicine · FCD · FIIM · PGPID
+            </p>
+
+            <p>
               With extensive experience in family medicine,
               internal medicine, diabetology and infectious
               diseases, Dr. Sakthi is dedicated to accurate
@@ -436,35 +601,33 @@ function Home() {
               patient wellness.
             </p>
 
-
-            <div className="expertise-grid">
+            <div className="expertise-list">
 
               <div>
-                <span>01</span>
-                <strong>Family Medicine</strong>
+                <span>✓</span>
+                Family Medicine
               </div>
 
               <div>
-                <span>02</span>
-                <strong>Internal Medicine</strong>
+                <span>✓</span>
+                Internal Medicine
               </div>
 
               <div>
-                <span>03</span>
-                <strong>Clinical Diabetology</strong>
+                <span>✓</span>
+                Clinical Diabetology
               </div>
 
               <div>
-                <span>04</span>
-                <strong>Infectious Diseases</strong>
+                <span>✓</span>
+                Infectious Diseases
               </div>
 
             </div>
 
-
             <Link
               to="/doctor"
-              className="dark-button"
+              className="doctor-button"
             >
               Know Your Doctor
               <span>→</span>
@@ -477,152 +640,51 @@ function Home() {
       </section>
 
 
-      {/* ================= FACILITIES ================= */}
-      <section className="facilities-section">
+      {/* =====================================================
+          APPOINTMENT CTA
+      ===================================================== */}
 
-        <div className="container">
-
-          <div className="facilities-heading reveal-up">
-
-            <div>
-              <span className="section-kicker">
-                Our Facilities
-              </span>
-
-              <h2>
-                Designed around
-                <br />
-                <span>patient comfort</span>
-              </h2>
-            </div>
-
-            <p>
-              A modern healthcare environment combining
-              professional medical services with comfort,
-              convenience and safety.
-            </p>
-
-          </div>
-
-
-          <div className="facilities-grid">
-
-            <div className="facility-card large">
-
-              <img
-                src="/doctor.jpeg"
-                alt="Hospital facility"
-              />
-
-              <div className="facility-overlay">
-                <span>01</span>
-
-                <h3>
-                  Modern Consultation Rooms
-                </h3>
-              </div>
-
-            </div>
-
-
-            <div className="facility-list">
-
-              <div className="facility-row">
-                <span>02</span>
-
-                <div>
-                  <h3>Inpatient Rooms</h3>
-                  <p>
-                    Comfortable rooms with continuous monitoring.
-                  </p>
-                </div>
-              </div>
-
-              <div className="facility-row">
-                <span>03</span>
-
-                <div>
-                  <h3>Diagnostic Laboratory</h3>
-                  <p>
-                    Accurate and timely diagnostic support.
-                  </p>
-                </div>
-              </div>
-
-              <div className="facility-row">
-                <span>04</span>
-
-                <div>
-                  <h3>In-house Pharmacy</h3>
-                  <p>
-                    Convenient access to quality medicines.
-                  </p>
-                </div>
-              </div>
-
-              <div className="facility-row">
-                <span>05</span>
-
-                <div>
-                  <h3>Emergency & Day Care</h3>
-                  <p>
-                    Dedicated facilities for urgent treatment.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* ================= APPOINTMENT ================= */}
-      <section className="appointment-banner">
+      <section className="appointment-section">
 
         <div className="appointment-glow"></div>
 
-        <div className="container appointment-inner">
+        <div className="home-container appointment-inner">
 
-          <div className="reveal-left">
+          <div>
 
-            <span className="section-kicker">
-              Your Health Matters
+            <span className="section-label light-label">
+              YOUR HEALTH MATTERS
             </span>
 
             <h2>
-              Let us care for
+              Ready to take the
               <br />
-              <span>your health.</span>
+              <span>next step?</span>
             </h2>
 
             <p>
-              Consultation hours: 9:00 AM – 12:30 PM
-              <br />
-              5:30 PM – 9:00 PM
+              Schedule a consultation with our medical team
+              and take the next step towards better health.
             </p>
 
           </div>
 
-
-          <div className="appointment-actions reveal-right">
+          <div className="appointment-actions">
 
             <Link
               to="/appointment"
-              className="gold-button"
+              className="appointment-btn"
             >
-              Book an Appointment
+              Schedule an Appointment
               <span>→</span>
             </Link>
 
             <a
               href="tel:9494456007"
-              className="phone-button"
+              className="appointment-phone"
             >
-              ☎ Call 9494456007
+              <small>CALL OUR HOSPITAL</small>
+              <strong>9494456007</strong>
             </a>
 
           </div>

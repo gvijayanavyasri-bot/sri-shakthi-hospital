@@ -1,32 +1,61 @@
 /* =========================================================
-   SRI SHAKTHI HOSPITAL - RESPONSIVE NAVBAR
+   SRI SAKTHI HOSPITAL
+   PREMIUM STICKY NAVBAR
+   CLASSIC • PROFESSIONAL • RESPONSIVE
    ========================================================= */
 
-/* ---------- RESET ---------- */
+@import url(
+  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+);
 
-* {
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+  --navy: #062f3a;
+  --navy-deep: #04242c;
+  --navy-light: #0b4653;
+
+  --teal: #087f82;
+  --teal-dark: #056568;
+  --teal-light: #e9f6f5;
+
+  --gold: #c99a45;
+  --gold-light: #ead6a6;
+
+  --white: #ffffff;
+  --cream: #f8f6f1;
+
+  --text: #173b44;
+  --muted: #61747a;
+
+  --border: #dfe7e8;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.top-bar *,
+.main-navbar * {
   box-sizing: border-box;
 }
 
-.navbar,
-.navbar *,
-.topbar,
-.topbar * {
-  box-sizing: border-box;
-}
-
-.navbar a,
-.topbar a {
+.top-bar a,
+.main-navbar a {
   text-decoration: none;
 }
 
 
 /* =========================================================
-   COMMON CONTAINER
+   CONTAINER
    ========================================================= */
 
-.container {
-  width: min(1200px, calc(100% - 40px));
+.navbar-container {
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
 
@@ -35,51 +64,126 @@
    TOP BAR
    ========================================================= */
 
-.topbar {
-  width: 100%;
-  background: #063b45;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
+.top-bar {
+  position: relative;
+  z-index: 900;
+
+  min-height: 38px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  background: var(--navy-deep);
+
+  font-family: "DM Sans", sans-serif;
 }
 
-.topbar-inner {
+.top-bar-inner {
   min-height: 38px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 20px;
 }
 
+.top-left {
+  display: flex;
+  align-items: center;
 
-/* =========================================================
-   MAIN NAVBAR
-   ========================================================= */
+  gap: 9px;
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.97);
-  border-bottom: 1px solid rgba(6, 59, 69, 0.08);
-  box-shadow: 0 5px 25px rgba(0, 50, 60, 0.07);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.top-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  background: var(--gold);
+
+  border-radius: 50%;
+
+  animation: topPulse 2s ease-in-out infinite;
+}
+
+.emergency-link {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  transition:
+    color 0.25s ease;
+}
+
+.emergency-link:hover {
+  color: var(--gold-light);
+}
+
+.emergency-icon {
+  display: grid;
+  place-items: center;
+
+  width: 19px;
+  height: 19px;
+
+  color: #ffffff;
+
+  background: var(--teal);
+
+  border-radius: 50%;
+
+  font-size: 12px;
 }
 
 
 /* =========================================================
-   NAV INNER
+   MAIN STICKY NAVBAR
    ========================================================= */
 
-.nav-inner {
-  min-height: 82px;
+.main-navbar {
+  position: sticky;
+  position: -webkit-sticky;
+
+  top: 0;
+  z-index: 9999;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid rgba(6, 47, 58, 0.1);
+
+  box-shadow:
+    0 7px 25px rgba(4, 37, 45, 0.06);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* =========================================================
+   NAVBAR INNER
+   ========================================================= */
+
+.navbar-inner {
+  min-height: 84px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+
+  gap: 25px;
 }
 
 
@@ -87,62 +191,76 @@
    LOGO
    ========================================================= */
 
-.logo {
-  display: inline-flex;
+.hospital-logo {
+  display: flex;
   align-items: center;
-  gap: 11px;
+
   flex-shrink: 0;
-  color: #063b45;
-  transition: transform 0.25s ease;
+
+  gap: 12px;
+
+  color: var(--navy);
+
+  transition:
+    transform 0.3s ease;
 }
 
-.logo:hover {
+.hospital-logo:hover {
   transform: translateY(-1px);
 }
 
-.logo-mark {
+.logo-symbol {
+  display: grid;
+  place-items: center;
+
   width: 45px;
   height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  background: linear-gradient(
-    135deg,
-    #0b8f8c,
-    #08706f
-  );
+  flex-shrink: 0;
 
   color: #ffffff;
-  font-size: 25px;
-  font-weight: 700;
 
-  border-radius: 13px;
+  background: var(--teal);
+
+  border-radius: 50%;
+
+  font-size: 25px;
+  font-weight: 500;
 
   box-shadow:
-    0 8px 20px rgba(8, 112, 111, 0.22);
+    0 7px 20px rgba(8, 127, 130, 0.2);
 }
 
-.logo > span:last-child {
+.logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
 }
 
-.logo strong {
-  font-size: 20px;
+.logo-text strong {
+  color: var(--navy);
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.logo-text small {
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: -0.4px;
-  color: #063b45;
-}
 
-.logo small {
-  margin-top: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.16em;
+
   text-transform: uppercase;
-  color: #71858a;
 }
 
 
@@ -150,65 +268,70 @@
    DESKTOP NAVIGATION
    ========================================================= */
 
-.nav-links {
+.desktop-navigation {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   gap: 4px;
+
   margin-left: auto;
 }
 
-.nav-links a {
+.nav-link {
   position: relative;
 
-  padding: 10px 12px;
+  display: flex;
+  align-items: center;
 
-  color: #405b61;
-  font-size: 14px;
-  font-weight: 600;
+  min-height: 84px;
 
-  border-radius: 8px;
+  padding: 0 13px;
+
+  color: #36545c;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 12px;
+  font-weight: 800;
 
   transition:
     color 0.25s ease,
     background 0.25s ease;
 }
 
-.nav-links a:hover {
-  color: #08706f;
-  background: #f0f8f7;
-}
-
-.nav-links a.active {
-  color: #08706f;
-}
-
-
-/* Animated active underline */
-
-.nav-links a::after {
+.nav-link::after {
   content: "";
 
   position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 3px;
 
-  height: 2px;
+  left: 13px;
+  right: 13px;
 
-  background: #0b8f8c;
+  bottom: 0;
 
-  border-radius: 10px;
+  height: 3px;
+
+  background: var(--gold);
 
   transform: scaleX(0);
+
   transform-origin: center;
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.3s ease;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-link:hover {
+  color: var(--teal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
   transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: var(--teal);
 }
 
 
@@ -216,126 +339,138 @@
    APPOINTMENT BUTTON
    ========================================================= */
 
-.appointment-btn {
-  flex-shrink: 0;
-
+.navbar-appointment {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 44px;
-  padding: 0 20px;
+  flex-shrink: 0;
 
-  color: #ffffff !important;
+  gap: 9px;
 
-  background: linear-gradient(
-    135deg,
-    #0b8f8c,
-    #08706f
-  );
+  min-height: 45px;
 
-  border-radius: 10px;
+  padding: 0 18px;
 
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
+  color: #ffffff;
 
-  box-shadow:
-    0 8px 20px rgba(8, 112, 111, 0.20);
+  background: var(--navy);
+
+  border-radius: 3px;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 11px;
+  font-weight: 800;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.appointment-btn:hover {
-  color: #ffffff !important;
+.navbar-appointment span {
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.navbar-appointment:hover {
+  color: #ffffff;
+
+  background: var(--teal);
 
   transform: translateY(-2px);
 
-  background: linear-gradient(
-    135deg,
-    #08706f,
-    #065b5a
-  );
-
   box-shadow:
-    0 12px 25px rgba(8, 112, 111, 0.28);
+    0 10px 25px rgba(8, 127, 130, 0.2);
+}
+
+.navbar-appointment:hover span {
+  transform: translateX(4px);
 }
 
 
 /* =========================================================
-   MOBILE HAMBURGER BUTTON
+   MOBILE MENU BUTTON
    ========================================================= */
 
-.mobile-menu-btn {
+.mobile-menu-button {
   display: none;
 
-  width: 45px;
-  height: 45px;
+  position: relative;
+
+  width: 46px;
+  height: 46px;
 
   padding: 0;
 
-  border: 0;
-  outline: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
 
-  background: #f0f8f7;
-
-  border-radius: 10px;
+  background: #ffffff;
 
   cursor: pointer;
 
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-
   transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.mobile-menu-btn:hover {
-  background: #e1f3f1;
+.mobile-menu-button:hover {
+  border-color: var(--teal);
+
+  background: var(--teal-light);
 }
 
-.mobile-menu-btn:active {
-  transform: scale(0.94);
-}
+.mobile-menu-button span {
+  position: absolute;
 
-.mobile-menu-btn span {
-  display: block;
+  left: 12px;
 
   width: 21px;
   height: 2px;
 
-  background: #08706f;
-
-  border-radius: 10px;
+  background: var(--navy);
 
   transition:
-    transform 0.3s ease,
+    transform 0.35s ease,
     opacity 0.25s ease,
-    width 0.3s ease;
+    top 0.35s ease;
+}
+
+.mobile-menu-button span:nth-child(1) {
+  top: 14px;
+}
+
+.mobile-menu-button span:nth-child(2) {
+  top: 21px;
+}
+
+.mobile-menu-button span:nth-child(3) {
+  top: 28px;
 }
 
 
 /* =========================================================
-   HAMBURGER -> X ANIMATION
+   HAMBURGER → X
    ========================================================= */
 
-.mobile-menu-btn.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+.mobile-menu-button.menu-open span:nth-child(1) {
+  top: 21px;
+
+  transform: rotate(45deg);
 }
 
-.mobile-menu-btn.active span:nth-child(2) {
+.mobile-menu-button.menu-open span:nth-child(2) {
   opacity: 0;
-  width: 0;
 }
 
-.mobile-menu-btn.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.mobile-menu-button.menu-open span:nth-child(3) {
+  top: 21px;
+
+  transform: rotate(-45deg);
 }
 
 
@@ -343,135 +478,7 @@
    MOBILE NAVIGATION
    ========================================================= */
 
-.mobile-nav {
-  display: none;
-
-  max-height: 0;
-  overflow: hidden;
-
-  opacity: 0;
-
-  background: #ffffff;
-
-  border-top: 1px solid transparent;
-
-  transition:
-    max-height 0.4s ease,
-    opacity 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.mobile-nav.open {
-  max-height: 600px;
-
-  opacity: 1;
-
-  border-top-color: rgba(6, 59, 69, 0.08);
-}
-
-
-/* Mobile links */
-
-.mobile-nav a {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  min-height: 50px;
-
-  padding: 0 22px;
-
-  color: #405b61;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  border-bottom: 1px solid #edf3f3;
-
-  transition:
-    color 0.25s ease,
-    background 0.25s ease,
-    padding-left 0.25s ease;
-}
-
-.mobile-nav a:hover {
-  color: #08706f;
-  background: #f5fbfa;
-  padding-left: 28px;
-}
-
-.mobile-nav a.active {
-  color: #08706f;
-  background: #f0f8f7;
-}
-
-
-/* Active indicator */
-
-.mobile-nav a.active::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  top: 0;
-  bottom: 0;
-
-  width: 3px;
-
-  background: #0b8f8c;
-}
-
-
-/* =========================================================
-   MOBILE APPOINTMENT
-   ========================================================= */
-
-.mobile-nav .mobile-appointment {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 16px 20px 20px;
-
-  min-height: 48px;
-
-  padding: 0 20px;
-
-  color: #ffffff !important;
-
-  background: linear-gradient(
-    135deg,
-    #0b8f8c,
-    #08706f
-  );
-
-  border: 0;
-  border-radius: 10px;
-
-  font-weight: 700;
-
-  box-shadow:
-    0 8px 20px rgba(8, 112, 111, 0.18);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.mobile-nav .mobile-appointment:hover {
-  color: #ffffff !important;
-
-  padding-left: 20px;
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 25px rgba(8, 112, 111, 0.25);
-}
-
-.mobile-nav .mobile-appointment::before {
+.mobile-navigation {
   display: none;
 }
 
@@ -480,76 +487,38 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
 
-  .container {
-    width: min(100% - 32px, 1100px);
+  .navbar-container {
+    width: min(
+      950px,
+      calc(100% - 35px)
+    );
   }
 
-  .nav-inner {
-    gap: 18px;
-  }
-
-  .nav-links {
+  .desktop-navigation {
     gap: 0;
   }
 
-  .nav-links a {
-    padding: 10px 8px;
-    font-size: 13px;
+  .nav-link {
+    padding: 0 9px;
+
+    font-size: 11px;
   }
 
-  .nav-links a::after {
-    left: 8px;
-    right: 8px;
+  .nav-link::after {
+    left: 9px;
+    right: 9px;
   }
 
-  .appointment-btn {
-    padding: 0 15px;
-    font-size: 12px;
+  .navbar-appointment {
+    padding: 0 13px;
+
+    font-size: 10px;
   }
 
-  .logo strong {
-    font-size: 18px;
-  }
-}
-
-
-/* =========================================================
-   TABLET / SMALL LAPTOP
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .nav-links,
-  .appointment-btn {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-  }
-
-  .mobile-nav {
-    display: block;
-  }
-
-  .nav-inner {
-    min-height: 72px;
-  }
-
-  .logo-mark {
-    width: 42px;
-    height: 42px;
-    font-size: 23px;
-  }
-
-  .logo strong {
-    font-size: 18px;
-  }
-
-  .logo small {
-    font-size: 9px;
+  .logo-text strong {
+    font-size: 20px;
   }
 }
 
@@ -558,132 +527,441 @@
    MOBILE
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-  .container {
-    width: calc(100% - 28px);
-  }
-
-  .topbar {
-    font-size: 11px;
-  }
-
-  .topbar-inner {
+  .top-bar {
     min-height: 34px;
-
-    justify-content: center;
-
-    text-align: center;
   }
 
-  .topbar-inner > div {
+  .top-bar-inner {
+    min-height: 34px;
+  }
+
+  .top-left {
+    font-size: 9px;
+  }
+
+  .emergency-link {
+    font-size: 9px;
+  }
+
+  .emergency-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  /* STICKY MOBILE NAVBAR */
+
+  .main-navbar {
+    position: sticky;
+    position: -webkit-sticky;
+
+    top: 0;
+    z-index: 9999;
+  }
+
+  .navbar-inner {
+    min-height: 72px;
+  }
+
+
+  /* HIDE DESKTOP */
+
+  .desktop-navigation,
+  .navbar-appointment {
     display: none;
   }
 
-  .nav-inner {
-    min-height: 68px;
+
+  /* SHOW MOBILE BUTTON */
+
+  .mobile-menu-button {
+    display: block;
   }
 
-  .logo {
-    gap: 9px;
+
+  /* MOBILE LOGO */
+
+  .hospital-logo {
+    gap: 10px;
   }
 
-  .logo-mark {
-    width: 39px;
-    height: 39px;
+  .logo-symbol {
+    width: 41px;
+    height: 41px;
 
-    border-radius: 10px;
+    font-size: 23px;
+  }
+
+  .logo-text strong {
+    font-size: 20px;
+  }
+
+  .logo-text small {
+    font-size: 7px;
+  }
+
+
+  /* MOBILE MENU */
+
+  .mobile-navigation {
+    display: block;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-top: 0 solid var(--border);
+
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+    transition:
+      max-height 0.5s ease,
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .mobile-navigation-open {
+    max-height: calc(100vh - 106px);
+
+    overflow-y: auto;
+
+    border-top: 1px solid var(--border);
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+  .mobile-navigation-inner {
+    width: min(
+      650px,
+      calc(100% - 30px)
+    );
+
+    margin: 0 auto;
+
+    padding: 8px 0 25px;
+  }
+
+
+  /* MOBILE LINKS */
+
+  .mobile-nav-link {
+    display: grid;
+
+    grid-template-columns:
+      35px
+      1fr
+      30px;
+
+    align-items: center;
+
+    min-height: 57px;
+
+    padding: 0 7px;
+
+    color: var(--navy);
+
+    border-bottom: 1px solid #e7eded;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition:
+      padding-left 0.3s ease,
+      color 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .mobile-nav-link:hover {
+    padding-left: 13px;
+
+    color: var(--teal);
+
+    background: #f5faf9;
+  }
+
+  .mobile-nav-link.active {
+    color: var(--teal);
+
+    background: #f1f8f7;
+  }
+
+  .mobile-nav-number {
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-nav-arrow {
+    justify-self: end;
+
+    color: var(--gold);
+
+    font-size: 19px;
+
+    transition:
+      transform 0.3s ease;
+  }
+
+  .mobile-nav-link:hover .mobile-nav-arrow {
+    transform: translateX(4px);
+  }
+
+
+  /* MOBILE APPOINTMENT */
+
+  .mobile-appointment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    min-height: 72px;
+
+    padding: 15px 18px;
+
+    color: #ffffff;
+
+    background: var(--navy);
+
+    border-radius: 4px;
+
+    box-shadow:
+      0 12px 30px rgba(4, 37, 45, 0.13);
+
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .mobile-appointment:hover {
+    color: #ffffff;
+
+    background: var(--teal);
+
+    transform: translateY(-2px);
+  }
+
+  .mobile-appointment span {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .mobile-appointment small {
+    margin-bottom: 3px;
+
+    color: var(--gold-light);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+  }
+
+  .mobile-appointment strong {
+    font-size: 25px;
+  }
+
+
+  /* MOBILE EMERGENCY */
+
+  .mobile-emergency {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 12px;
+
+    padding: 14px 5px;
+
+    color: var(--navy);
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .mobile-emergency-icon {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    background: var(--teal);
+
+    border-radius: 50%;
 
     font-size: 21px;
   }
 
-  .logo strong {
+  .mobile-emergency span:last-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-emergency small {
+    margin-bottom: 1px;
+
+    color: var(--gold);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar-container {
+    width: calc(100% - 24px);
+  }
+
+  .top-bar-inner {
+    gap: 8px;
+  }
+
+  .top-left span:last-child {
+    white-space: nowrap;
+  }
+
+  .emergency-link {
+    white-space: nowrap;
+  }
+
+  .main-navbar {
+    box-shadow:
+      0 5px 20px rgba(4, 37, 45, 0.08);
+  }
+
+  .navbar-inner {
+    min-height: 66px;
+  }
+
+  .logo-symbol {
+    width: 38px;
+    height: 38px;
+
+    font-size: 21px;
+  }
+
+  .logo-text strong {
+    font-size: 18px;
+  }
+
+  .logo-text small {
+    font-size: 6.5px;
+
+    letter-spacing: 0.12em;
+  }
+
+  .mobile-menu-button {
+    width: 43px;
+    height: 43px;
+  }
+
+  .mobile-navigation-inner {
+    width: calc(100% - 24px);
+  }
+
+  .mobile-nav-link {
+    min-height: 54px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .top-left {
+    display: none;
+  }
+
+  .top-bar-inner {
+    justify-content: flex-end;
+  }
+
+  .logo-text strong {
     font-size: 17px;
   }
 
-  .logo small {
-    font-size: 8px;
-    letter-spacing: 0.9px;
+  .logo-text small {
+    font-size: 6px;
   }
 
-  .mobile-menu-btn {
-    width: 42px;
-    height: 42px;
-  }
-
-  .mobile-nav a {
-    min-height: 48px;
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .mobile-nav a:hover {
-    padding-left: 24px;
-  }
-
-  .mobile-nav .mobile-appointment {
-    margin-left: 16px;
-    margin-right: 16px;
+  .mobile-navigation-open {
+    max-height: calc(100vh - 100px);
   }
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   TOP BAR ANIMATION
    ========================================================= */
 
-@media (max-width: 380px) {
+@keyframes topPulse {
 
-  .container {
-    width: calc(100% - 22px);
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 
-  .logo strong {
-    font-size: 15px;
-  }
-
-  .logo small {
-    font-size: 7px;
-  }
-
-  .logo-mark {
-    width: 36px;
-    height: 36px;
-    font-size: 19px;
-  }
-
-  .mobile-menu-btn {
-    width: 40px;
-    height: 40px;
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
   }
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-.mobile-menu-btn:focus-visible,
-.nav-links a:focus-visible,
-.mobile-nav a:focus-visible,
-.logo:focus-visible,
-.appointment-btn:focus-visible {
-  outline: 3px solid rgba(11, 143, 140, 0.25);
-  outline-offset: 3px;
-}
-
-
-/* =========================================================
-   REDUCE MOTION
+   REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+  .main-navbar *,
+  .main-navbar *::before,
+  .main-navbar *::after,
+  .top-bar * {
     animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
   }
 }
