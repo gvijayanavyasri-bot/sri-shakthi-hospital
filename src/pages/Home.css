@@ -1,13 +1,14 @@
+
 /* =========================================================
    SRI SAKTHI HOSPITAL
    HOME PAGE
    CLASSIC • PREMIUM • PROFESSIONAL • RESPONSIVE
+   DESKTOP • TABLET • MOBILE
    ========================================================= */
 
 @import url(
   "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
 );
-
 
 /* =========================================================
    DESIGN SYSTEM
@@ -24,7 +25,7 @@
 
   --gold: #c89a48;
   --gold-dark: #a77a2e;
-  --gold-soft: #ead6a5;
+  --gold-light: #ead6a5;
 
   --cream: #f8f6f1;
   --cream-dark: #eeeae1;
@@ -38,11 +39,8 @@
   --border: #dce5e6;
 
   color: var(--text);
-
   background: var(--white);
-
   font-family: "DM Sans", Arial, sans-serif;
-
   overflow: hidden;
 }
 
@@ -57,8 +55,8 @@
 }
 
 .home-page img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 .home-container {
@@ -66,33 +64,9 @@
   margin: 0 auto;
 }
 
-
 /* =========================================================
-   COMMON TYPOGRAPHY
+   TYPOGRAPHY
    ========================================================= */
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  color: var(--teal);
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.section-label::before {
-  content: "";
-
-  width: 28px;
-  height: 2px;
-
-  background: var(--gold);
-}
 
 .home-page h1,
 .home-page h2,
@@ -104,6 +78,23 @@
   color: var(--muted);
 }
 
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--gold);
+}
 
 /* =========================================================
    HERO
@@ -111,12 +102,10 @@
 
 .home-hero {
   position: relative;
-
   min-height: 690px;
-
   display: flex;
   align-items: center;
-
+  isolation: isolate;
   background:
     linear-gradient(
       135deg,
@@ -124,72 +113,52 @@
       #ffffff 55%,
       #eef7f6 100%
     );
-
-  isolation: isolate;
 }
 
 .hero-container {
   position: relative;
   z-index: 5;
-
   min-height: 690px;
-
   display: grid;
   grid-template-columns: 1.02fr 0.98fr;
-
   align-items: center;
-
   gap: 40px;
-
-  padding-top: 45px;
-  padding-bottom: 45px;
+  padding: 45px 0;
 }
 
-
-/* Background shapes */
+/* =========================================================
+   HERO BACKGROUND
+   ========================================================= */
 
 .hero-background-shape {
   position: absolute;
-
   pointer-events: none;
-
   border-radius: 50%;
-
-  filter: blur(1px);
-
   z-index: -1;
 }
 
 .hero-shape-one {
   width: 560px;
   height: 560px;
-
   right: -220px;
   top: -170px;
-
   border: 1px solid rgba(8, 127, 130, 0.12);
-
   animation: heroFloat 10s ease-in-out infinite;
 }
 
 .hero-shape-two {
   width: 350px;
   height: 350px;
-
   left: -200px;
   bottom: -200px;
-
   background: rgba(200, 154, 72, 0.06);
-
   animation: heroFloatReverse 12s ease-in-out infinite;
 }
 
 .hero-grid-pattern {
   position: absolute;
   inset: 0;
-
   opacity: 0.35;
-
   background-image:
     linear-gradient(
       rgba(6, 47, 58, 0.035) 1px,
@@ -200,18 +169,16 @@
       rgba(6, 47, 58, 0.035) 1px,
       transparent 1px
     );
-
   background-size: 60px 60px;
-
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 25%,
-    black 75%,
-    transparent
-  );
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    );
 }
-
 
 /* =========================================================
    HERO CONTENT
@@ -219,47 +186,35 @@
 
 .hero-content {
   max-width: 650px;
-
   animation: revealLeft 0.9s ease both;
 }
 
 .hero-label-wrap {
   display: flex;
   align-items: center;
-
   gap: 13px;
-
   margin-bottom: 22px;
 }
 
 .hero-label {
   color: var(--teal);
-
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 0.22em;
 }
 
 .hero-label-line {
   width: 50px;
   height: 2px;
-
   background: var(--gold);
 }
 
-
 .hero-content h1 {
   margin: 0;
-
   color: var(--navy-dark);
-
   font-size: clamp(48px, 5.2vw, 73px);
-
   font-weight: 600;
-
   line-height: 1.03;
-
   letter-spacing: -0.035em;
 }
 
@@ -269,17 +224,12 @@
 
 .hero-description {
   max-width: 570px;
-
   margin: 28px 0 30px;
-
   color: #405a62 !important;
-
   font-size: 16px;
   font-weight: 600;
-
   line-height: 1.8;
 }
-
 
 /* =========================================================
    HERO BUTTONS
@@ -288,33 +238,24 @@
 .hero-buttons {
   display: flex;
   align-items: center;
-
   gap: 12px;
-
   margin-bottom: 42px;
 }
 
 .home-btn {
   position: relative;
-
   min-height: 52px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   gap: 20px;
-
   padding: 0 22px;
-
   overflow: hidden;
+  border-radius: 3px;
 
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 0.04em;
-
-  border-radius: 3px;
 
   transition:
     transform 0.3s ease,
@@ -324,19 +265,13 @@
 
 .home-btn::before {
   content: "";
-
   position: absolute;
-
   width: 100px;
   height: 160%;
-
   top: -30%;
   left: -130%;
-
-  background: rgba(255, 255, 255, 0.20);
-
+  background: rgba(255, 255, 255, 0.2);
   transform: rotate(20deg);
-
   transition: left 0.55s ease;
 }
 
@@ -346,7 +281,6 @@
 
 .home-btn strong {
   font-size: 18px;
-
   transition: transform 0.3s ease;
 }
 
@@ -356,40 +290,29 @@
 
 .home-btn-primary {
   color: #ffffff;
-
   background: var(--navy);
-
   box-shadow: 0 12px 28px rgba(6, 47, 58, 0.15);
 }
 
 .home-btn-primary:hover {
   color: #ffffff;
-
   background: var(--teal);
-
   transform: translateY(-3px);
-
   box-shadow: 0 15px 32px rgba(8, 127, 130, 0.22);
 }
 
 .home-btn-outline {
   color: var(--navy);
-
   background: transparent;
-
   border: 1px solid #b8c9cb;
 }
 
 .home-btn-outline:hover {
   color: var(--teal);
-
   border-color: var(--teal);
-
   background: #f3f9f8;
-
   transform: translateY(-3px);
 }
-
 
 /* =========================================================
    HERO TRUST
@@ -398,34 +321,27 @@
 .hero-trust {
   display: flex;
   align-items: center;
-
   gap: 22px;
 }
 
 .trust-item {
   display: flex;
   align-items: center;
-
   gap: 10px;
 }
 
 .trust-item strong {
   color: var(--gold-dark);
-
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: 28px;
   font-weight: 700;
 }
 
 .trust-item span {
   color: #50676e;
-
   font-size: 9px;
   font-weight: 800;
-
   line-height: 1.45;
-
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -433,37 +349,28 @@
 .trust-divider {
   width: 1px;
   height: 38px;
-
   background: #ccd9da;
 }
 
-
 /* =========================================================
-   HERO DOCTOR AREA
+   HERO DOCTOR
    ========================================================= */
 
 .hero-doctor-area {
   position: relative;
-
   min-height: 580px;
-
   display: flex;
   align-items: flex-end;
   justify-content: center;
-
   animation: revealRight 1s ease 0.15s both;
 }
 
 .doctor-glow {
   position: absolute;
-
   width: 430px;
   height: 430px;
-
   top: 55px;
-
   border-radius: 50%;
-
   background:
     radial-gradient(
       circle,
@@ -471,32 +378,24 @@
       rgba(8, 127, 130, 0.07) 48%,
       transparent 72%
     );
-
   animation: glowPulse 5s ease-in-out infinite;
 }
 
 .doctor-circle {
   position: absolute;
-
   width: 450px;
   height: 450px;
-
   top: 45px;
-
   border: 1px solid rgba(8, 127, 130, 0.17);
-
   border-radius: 50%;
 }
 
 .doctor-circle::before,
 .doctor-circle::after {
   content: "";
-
   position: absolute;
-
   border-radius: 50%;
-
-  border: 1px solid rgba(200, 154, 72, 0.20);
+  border: 1px solid rgba(200, 154, 72, 0.2);
 }
 
 .doctor-circle::before {
@@ -507,11 +406,9 @@
   inset: 52px;
 }
 
-
 .doctor-image-wrapper {
   position: relative;
   z-index: 3;
-
   width: 405px;
   height: 505px;
 
@@ -539,23 +436,17 @@
 .doctor-image-ring {
   position: absolute;
   inset: 13px;
-
-  border: 1px solid rgba(255, 255, 255, 0.75);
-
-  border-radius: 200px 200px 8px 8px;
-
   z-index: 2;
-
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 200px 200px 8px 8px;
   pointer-events: none;
 }
 
 .hero-doctor-image {
   position: relative;
   z-index: 1;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center top;
 
@@ -568,10 +459,8 @@
 
 .doctor-image-wrapper:hover .hero-doctor-image {
   transform: scale(1.035);
-
   filter: saturate(1) contrast(1.05);
 }
-
 
 /* =========================================================
    DOCTOR FLOATING CARD
@@ -579,19 +468,14 @@
 
 .doctor-floating-card {
   position: absolute;
-
   z-index: 8;
-
   right: 0;
   bottom: 35px;
-
   width: 275px;
-
   padding: 22px;
 
   background: rgba(255, 255, 255, 0.97);
-
-  border: 1px solid rgba(6, 47, 58, 0.10);
+  border: 1px solid rgba(6, 47, 58, 0.1);
 
   box-shadow:
     0 18px 45px rgba(6, 47, 58, 0.15);
@@ -601,28 +485,21 @@
 
 .doctor-card-label {
   color: var(--gold-dark);
-
   font-size: 9px;
   font-weight: 800;
-
   letter-spacing: 0.17em;
 }
 
 .doctor-floating-card h3 {
   margin: 8px 0 7px;
-
   color: var(--navy);
-
   font-size: 21px;
-
   line-height: 1.18;
 }
 
 .doctor-floating-card p {
   margin: 0;
-
   color: var(--muted);
-
   font-size: 11px;
   font-weight: 700;
 }
@@ -630,35 +507,26 @@
 .doctor-experience {
   display: flex;
   align-items: center;
-
   gap: 10px;
-
   margin-top: 16px;
   padding-top: 14px;
-
   border-top: 1px solid #e4e9e9;
 }
 
 .doctor-experience span {
   color: var(--teal);
-
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: 27px;
   font-weight: 700;
 }
 
 .doctor-experience small {
   color: var(--muted);
-
   font-size: 9px;
   font-weight: 800;
-
   line-height: 1.35;
-
   text-transform: uppercase;
 }
-
 
 /* =========================================================
    FLOATING BADGES
@@ -666,21 +534,19 @@
 
 .floating-badge {
   position: absolute;
-
   z-index: 9;
 
   display: flex;
   align-items: center;
-
   gap: 9px;
 
   padding: 10px 14px;
 
   background: #ffffff;
-
   border: 1px solid #e2e9e9;
 
-  box-shadow: 0 12px 30px rgba(6, 47, 58, 0.10);
+  box-shadow:
+    0 12px 30px rgba(6, 47, 58, 0.1);
 
   animation: badgeFloat 4s ease-in-out infinite;
 }
@@ -694,7 +560,6 @@
 
   color: #ffffff;
   background: var(--teal);
-
   border-radius: 50%;
 
   font-size: 15px;
@@ -702,14 +567,10 @@
 
 .floating-badge p {
   margin: 0;
-
   color: var(--navy) !important;
-
   font-size: 9px;
   font-weight: 800;
-
   line-height: 1.3;
-
   text-transform: uppercase;
 }
 
@@ -721,7 +582,6 @@
 .badge-two {
   right: 20px;
   top: 70px;
-
   animation-delay: 1.2s;
 }
 
@@ -730,7 +590,6 @@
   background: var(--cream);
 }
 
-
 /* =========================================================
    TRUST STRIP
    ========================================================= */
@@ -738,9 +597,7 @@
 .trust-strip {
   position: relative;
   z-index: 10;
-
   background: var(--navy);
-
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -754,12 +611,11 @@
 
   display: flex;
   align-items: center;
-
   gap: 15px;
 
   padding: 18px 22px;
 
-  border-right: 1px solid rgba(255, 255, 255, 0.10);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 
   transition:
     background 0.3s ease,
@@ -772,25 +628,21 @@
 
 .trust-box:hover {
   background: rgba(255, 255, 255, 0.045);
-
   transform: translateY(-3px);
 }
 
 .trust-icon {
   display: grid;
   place-items: center;
-
   flex-shrink: 0;
 
   width: 42px;
   height: 42px;
 
   color: var(--gold-light);
-
   background: rgba(255, 255, 255, 0.08);
 
   border: 1px solid rgba(234, 214, 165, 0.15);
-
   border-radius: 50%;
 
   font-size: 16px;
@@ -798,24 +650,18 @@
 
 .trust-box h3 {
   margin: 0 0 4px;
-
   color: #ffffff;
-
   font-family: "DM Sans", sans-serif;
-
   font-size: 12px;
   font-weight: 800;
 }
 
 .trust-box p {
   margin: 0;
-
-  color: rgba(255, 255, 255, 0.65);
-
+  color: rgba(255, 255, 255, 0.68);
   font-size: 10px;
   font-weight: 500;
 }
-
 
 /* =========================================================
    WELCOME
@@ -823,18 +669,14 @@
 
 .welcome-section {
   position: relative;
-
   padding: 115px 0;
-
   background: var(--cream);
 }
 
 .welcome-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-
   align-items: center;
-
   gap: 85px;
 }
 
@@ -846,13 +688,9 @@
 .section-heading h2,
 .doctor-content h2 {
   margin: 20px 0 22px;
-
   color: var(--navy-dark);
-
   font-size: clamp(38px, 4vw, 54px);
-
   line-height: 1.08;
-
   letter-spacing: -0.025em;
 }
 
@@ -864,22 +702,17 @@
 
 .welcome-content > p {
   max-width: 690px;
-
   font-size: 15px;
   font-weight: 500;
-
   line-height: 1.8;
 }
 
 .welcome-lead {
   color: var(--text-dark) !important;
-
   font-size: 17px !important;
   font-weight: 700 !important;
-
   line-height: 1.65 !important;
 }
-
 
 /* =========================================================
    VALUES
@@ -888,21 +721,16 @@
 .values-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 12px;
-
   margin: 35px 0 30px;
 }
 
 .value-card {
   position: relative;
-
   min-height: 165px;
-
   padding: 18px;
 
   background: #ffffff;
-
   border: 1px solid #e1e7e6;
 
   transition:
@@ -913,38 +741,30 @@
 
 .value-card:hover {
   transform: translateY(-8px);
-
   border-color: rgba(8, 127, 130, 0.25);
-
-  box-shadow: 0 16px 35px rgba(6, 47, 58, 0.08);
+  box-shadow:
+    0 16px 35px rgba(6, 47, 58, 0.08);
 }
 
 .value-card > span {
   color: var(--gold-dark);
-
   font-size: 9px;
   font-weight: 800;
-
   letter-spacing: 0.15em;
 }
 
 .value-card h3 {
   margin: 14px 0 7px;
-
   color: var(--navy);
-
   font-size: 19px;
 }
 
 .value-card p {
   margin: 0;
-
   font-size: 11px;
   font-weight: 600;
-
   line-height: 1.55;
 }
-
 
 /* =========================================================
    TEXT LINK
@@ -953,19 +773,16 @@
 .text-link {
   display: inline-flex;
   align-items: center;
-
   gap: 12px;
 
   color: var(--navy);
 
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
   border-bottom: 1px solid var(--gold);
-
   padding-bottom: 7px;
 
   transition:
@@ -975,16 +792,13 @@
 
 .text-link span {
   color: var(--gold);
-
   font-size: 18px;
 }
 
 .text-link:hover {
   color: var(--teal);
-
   gap: 17px;
 }
-
 
 /* =========================================================
    WELCOME VISUAL
@@ -992,7 +806,6 @@
 
 .welcome-visual {
   position: relative;
-
   min-height: 500px;
 
   display: flex;
@@ -1023,29 +836,24 @@
       #084651
     );
 
-  box-shadow: 25px 25px 0 rgba(8, 127, 130, 0.10);
+  box-shadow:
+    25px 25px 0 rgba(8, 127, 130, 0.1);
 }
 
 .visual-frame::before {
   content: "";
-
   position: absolute;
   inset: 15px;
-
-  border: 1px solid rgba(234, 214, 165, 0.20);
-
+  border: 1px solid rgba(234, 214, 165, 0.2);
   pointer-events: none;
 }
 
 .visual-top-line {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 90px;
   height: 4px;
-
   background: var(--gold);
 }
 
@@ -1060,13 +868,10 @@
 
   width: 53px;
   height: 53px;
-
   margin-bottom: 30px;
 
   color: var(--gold-light);
-
   background: rgba(255, 255, 255, 0.08);
-
   border-radius: 50%;
 
   font-size: 22px;
@@ -1074,11 +879,8 @@
 
 .visual-content h3 {
   margin: 0;
-
   color: #ffffff;
-
   font-size: 43px;
-
   line-height: 1.06;
 }
 
@@ -1088,14 +890,10 @@
 
 .visual-content p {
   max-width: 230px;
-
   margin-top: 28px;
-
-  color: rgba(255, 255, 255, 0.75);
-
+  color: rgba(255, 255, 255, 0.78);
   font-size: 12px;
   font-weight: 600;
-
   line-height: 1.7;
 }
 
@@ -1105,53 +903,40 @@
 
   display: flex;
   align-items: flex-end;
-
   gap: 3px;
 }
 
 .visual-number strong {
   color: #ffffff;
-
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: 68px;
-
   line-height: 0.8;
 }
 
 .visual-number > span {
   color: var(--gold-light);
-
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: 28px;
 }
 
 .visual-number small {
   margin-left: 12px;
-
   color: rgba(255, 255, 255, 0.62);
-
   font-size: 8px;
   font-weight: 800;
-
   line-height: 1.45;
-
   letter-spacing: 0.12em;
 }
 
 .visual-decoration {
   position: absolute;
-
   border: 1px solid rgba(8, 127, 130, 0.22);
-
   border-radius: 50%;
 }
 
 .visual-decoration-one {
   width: 130px;
   height: 130px;
-
   top: 30px;
   right: 0;
 }
@@ -1159,13 +944,10 @@
 .visual-decoration-two {
   width: 75px;
   height: 75px;
-
   bottom: 20px;
   left: 15px;
-
   border-color: rgba(200, 154, 72, 0.25);
 }
-
 
 /* =========================================================
    STATS
@@ -1173,9 +955,7 @@
 
 .stats-section {
   padding: 70px 0;
-
   background: #ffffff;
-
   border-top: 1px solid #e8eeee;
   border-bottom: 1px solid #e8eeee;
 }
@@ -1187,7 +967,6 @@
 
 .stat-card {
   position: relative;
-
   min-height: 125px;
 
   display: flex;
@@ -1196,7 +975,6 @@
   justify-content: center;
 
   padding: 20px;
-
   text-align: center;
 
   border-right: 1px solid #dfe7e7;
@@ -1212,34 +990,25 @@
 
 .stat-card:hover {
   background: #f7fbfa;
-
   transform: translateY(-5px);
 }
 
 .stat-card strong {
   color: var(--navy);
-
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: 38px;
   font-weight: 700;
-
   line-height: 1;
 }
 
 .stat-card span {
   margin-top: 9px;
-
   color: var(--muted);
-
   font-size: 9px;
   font-weight: 800;
-
   letter-spacing: 0.05em;
-
   text-transform: uppercase;
 }
-
 
 /* =========================================================
    SERVICES
@@ -1247,50 +1016,40 @@
 
 .services-section {
   padding: 115px 0;
-
   background: var(--cream);
 }
 
 .section-heading {
   max-width: 680px;
-
   margin-bottom: 55px;
 }
 
 .section-heading p {
   max-width: 600px;
-
   margin: 0;
-
   color: #50666d !important;
-
   font-size: 15px;
   font-weight: 600;
-
   line-height: 1.75;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 14px;
 }
 
 .service-card {
   position: relative;
-
   min-height: 355px;
 
   display: flex;
   flex-direction: column;
 
   padding: 32px;
-
   overflow: hidden;
 
   background: #ffffff;
-
   border: 1px solid #dce5e5;
 
   transition:
@@ -1301,9 +1060,7 @@
 
 .service-card::after {
   content: "";
-
   position: absolute;
-
   left: 0;
   bottom: 0;
 
@@ -1317,7 +1074,6 @@
 
 .service-card:hover {
   transform: translateY(-10px);
-
   border-color: rgba(8, 127, 130, 0.25);
 
   box-shadow:
@@ -1330,9 +1086,7 @@
 
 .service-featured {
   color: #ffffff;
-
   background: var(--navy);
-
   border-color: var(--navy);
 }
 
@@ -1350,7 +1104,6 @@
 
 .service-number {
   position: absolute;
-
   top: 23px;
   right: 25px;
 
@@ -1358,7 +1111,6 @@
 
   font-size: 10px;
   font-weight: 800;
-
   letter-spacing: 0.14em;
 }
 
@@ -1368,13 +1120,10 @@
 
   width: 50px;
   height: 50px;
-
   margin-bottom: 25px;
 
   color: var(--teal);
-
   background: var(--teal-soft);
-
   border-radius: 10px;
 
   font-size: 20px;
@@ -1390,35 +1139,27 @@
 
 .service-featured .service-icon {
   color: var(--gold-light);
-
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .service-card h3 {
   margin: 0 0 15px;
-
   color: var(--navy);
-
   font-size: 27px;
-
   line-height: 1.08;
 }
 
 .service-card p {
   margin: 0 0 25px;
-
   color: #566d74;
-
   font-size: 12px;
   font-weight: 600;
-
   line-height: 1.7;
 }
 
 .service-card a {
   display: inline-flex;
   align-items: center;
-
   gap: 10px;
 
   margin-top: auto;
@@ -1427,16 +1168,13 @@
 
   font-size: 10px;
   font-weight: 800;
-
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .service-card a span {
   color: var(--gold);
-
   font-size: 17px;
-
   transition: transform 0.3s ease;
 }
 
@@ -1448,18 +1186,14 @@
   color: #a77a2e;
 }
 
-
 /* =========================================================
    DOCTOR SECTION
    ========================================================= */
 
 .doctor-section {
   position: relative;
-
   padding: 120px 0;
-
   background: #ffffff;
-
   overflow: hidden;
 }
 
@@ -1473,19 +1207,15 @@
   top: -200px;
 
   border: 1px solid rgba(8, 127, 130, 0.09);
-
   border-radius: 50%;
 }
 
 .doctor-section-pattern::before {
   content: "";
-
   position: absolute;
-
   inset: 60px;
 
-  border: 1px solid rgba(200, 154, 72, 0.10);
-
+  border: 1px solid rgba(200, 154, 72, 0.1);
   border-radius: 50%;
 }
 
@@ -1495,14 +1225,14 @@
 
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-
   align-items: center;
 
   gap: 95px;
 }
 
-
-/* Doctor photo */
+/* =========================================================
+   DOCTOR PHOTO
+   ========================================================= */
 
 .doctor-photo-area {
   position: relative;
@@ -1536,14 +1266,12 @@
 
 .doctor-photo-area:hover img {
   transform: translateY(-8px);
-
   box-shadow:
     0 32px 65px rgba(6, 47, 58, 0.19);
 }
 
 .doctor-photo-border {
   position: absolute;
-
   z-index: 1;
 
   width: 390px;
@@ -1553,7 +1281,6 @@
   top: 0;
 
   border: 1px solid var(--gold);
-
   transform: translate(28px, -28px);
 
   border-radius: 8px;
@@ -1579,7 +1306,6 @@
 
 .doctor-photo-caption {
   position: absolute;
-
   z-index: 5;
 
   left: 30px;
@@ -1591,31 +1317,28 @@
   padding: 15px 20px;
 
   color: #ffffff;
-
   background: rgba(6, 47, 58, 0.94);
 
-  box-shadow: 0 10px 30px rgba(6, 47, 58, 0.15);
+  box-shadow:
+    0 10px 30px rgba(6, 47, 58, 0.15);
 }
 
 .doctor-photo-caption span {
   color: var(--gold-light);
-
   font-size: 8px;
   font-weight: 800;
-
   letter-spacing: 0.17em;
 }
 
 .doctor-photo-caption strong {
   margin-top: 4px;
-
   color: #ffffff;
-
   font-size: 12px;
 }
 
-
-/* Doctor content */
+/* =========================================================
+   DOCTOR CONTENT
+   ========================================================= */
 
 .doctor-content h2 {
   margin-bottom: 27px;
@@ -1623,41 +1346,33 @@
 
 .doctor-content h3 {
   margin: 0 0 8px;
-
   color: var(--navy);
-
   font-size: 25px;
 }
 
 .doctor-qualification {
   margin: 0 0 20px;
-
   color: var(--gold-dark) !important;
-
   font-size: 11px !important;
   font-weight: 800 !important;
-
   letter-spacing: 0.04em;
 }
 
 .doctor-content > p:not(.doctor-qualification) {
   max-width: 650px;
-
   color: #4f686f !important;
-
   font-size: 14px;
   font-weight: 600;
-
   line-height: 1.8;
 }
 
-
-/* Expertise */
+/* =========================================================
+   EXPERTISE
+   ========================================================= */
 
 .expertise-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   gap: 12px;
 
   margin: 28px 0 32px;
@@ -1666,15 +1381,12 @@
 .expertise-list div {
   display: flex;
   align-items: center;
-
   gap: 9px;
 
   padding: 10px 12px;
 
   color: var(--navy);
-
   background: #f6faf9;
-
   border: 1px solid #e1ebea;
 
   font-size: 11px;
@@ -1687,7 +1399,6 @@
 
 .expertise-list div:hover {
   transform: translateX(5px);
-
   border-color: rgba(8, 127, 130, 0.25);
 }
 
@@ -1699,7 +1410,6 @@
   height: 21px;
 
   color: #ffffff;
-
   background: var(--teal);
 
   border-radius: 50%;
@@ -1707,21 +1417,19 @@
   font-size: 10px;
 }
 
-
-/* Doctor button */
+/* =========================================================
+   DOCTOR BUTTON
+   ========================================================= */
 
 .doctor-button {
   display: inline-flex;
   align-items: center;
-
   gap: 15px;
 
   min-height: 50px;
-
   padding: 0 22px;
 
   color: #ffffff;
-
   background: var(--navy);
 
   font-size: 10px;
@@ -1738,26 +1446,23 @@
 
 .doctor-button span {
   color: var(--gold-light);
-
   font-size: 18px;
-
   transition: transform 0.3s ease;
 }
 
 .doctor-button:hover {
   color: #ffffff;
-
   background: var(--teal);
 
   transform: translateY(-3px);
 
-  box-shadow: 0 12px 25px rgba(8, 127, 130, 0.20);
+  box-shadow:
+    0 12px 25px rgba(8, 127, 130, 0.2);
 }
 
 .doctor-button:hover span {
   transform: translateX(5px);
 }
-
 
 /* =========================================================
    APPOINTMENT CTA
@@ -1793,7 +1498,6 @@
   top: -250px;
 
   border: 1px solid rgba(255, 255, 255, 0.09);
-
   border-radius: 50%;
 }
 
@@ -1809,7 +1513,6 @@
   bottom: -180px;
 
   border: 1px solid rgba(200, 154, 72, 0.12);
-
   border-radius: 50%;
 }
 
@@ -1822,8 +1525,7 @@
   right: 10%;
   top: 20%;
 
-  background: rgba(8, 127, 130, 0.20);
-
+  background: rgba(8, 127, 130, 0.2);
   filter: blur(80px);
 
   animation: glowPulse 5s ease-in-out infinite;
@@ -1846,11 +1548,9 @@
 
 .appointment-inner h2 {
   margin: 18px 0 14px;
-
   color: #ffffff;
 
   font-size: clamp(40px, 4.2vw, 57px);
-
   line-height: 1.06;
 }
 
@@ -1860,21 +1560,18 @@
 
 .appointment-inner p {
   max-width: 550px;
-
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.75);
 
   font-size: 14px;
   font-weight: 600;
-
   line-height: 1.7;
 }
 
 .appointment-actions {
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
 
   gap: 17px;
@@ -1885,15 +1582,12 @@
 .appointment-btn {
   display: inline-flex;
   align-items: center;
-
   gap: 20px;
 
   min-height: 55px;
-
   padding: 0 24px;
 
   color: var(--navy);
-
   background: var(--gold-light);
 
   font-size: 10px;
@@ -1910,18 +1604,17 @@
 
 .appointment-btn span {
   font-size: 19px;
-
   transition: transform 0.3s ease;
 }
 
 .appointment-btn:hover {
   color: var(--navy);
-
   background: #ffffff;
 
   transform: translateY(-3px);
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.16);
 }
 
 .appointment-btn:hover span {
@@ -1931,28 +1624,22 @@
 .appointment-phone {
   display: flex;
   flex-direction: column;
-
   padding-left: 3px;
 }
 
 .appointment-phone small {
-  color: rgba(255, 255, 255, 0.55);
-
+  color: rgba(255, 255, 255, 0.6);
   font-size: 8px;
   font-weight: 800;
-
   letter-spacing: 0.15em;
 }
 
 .appointment-phone strong {
   margin-top: 3px;
-
   color: #ffffff;
-
   font-size: 17px;
   font-weight: 800;
 }
-
 
 /* =========================================================
    ANIMATIONS
@@ -2050,13 +1737,11 @@
   }
 }
 
-
 /* =========================================================
-   TABLET
+   TABLET — 1050px
    ========================================================= */
 
 @media (max-width: 1050px) {
-
   .home-container {
     width: min(940px, calc(100% - 38px));
   }
@@ -2085,7 +1770,6 @@
 
   .doctor-floating-card {
     right: -10px;
-
     width: 245px;
   }
 
@@ -2102,13 +1786,11 @@
   }
 }
 
-
 /* =========================================================
-   TABLET / SMALL LAPTOP
+   TABLET — 850px
    ========================================================= */
 
 @media (max-width: 850px) {
-
   .home-hero {
     min-height: auto;
   }
@@ -2118,7 +1800,7 @@
 
     min-height: auto;
 
-    padding-top: 80px;
+    padding-top: 75px;
     padding-bottom: 70px;
   }
 
@@ -2132,6 +1814,7 @@
 
   .hero-doctor-area {
     min-height: 550px;
+    margin-top: 15px;
   }
 
   .trust-grid {
@@ -2144,7 +1827,6 @@
 
   .welcome-grid {
     grid-template-columns: 1fr;
-
     gap: 70px;
   }
 
@@ -2175,16 +1857,13 @@
 
   .doctor-grid {
     grid-template-columns: 1fr;
-
     gap: 75px;
   }
 
   .doctor-photo-area {
     max-width: 500px;
-
-    margin: 0 auto;
-
     width: 100%;
+    margin: 0 auto;
   }
 
   .doctor-content {
@@ -2192,72 +1871,108 @@
   }
 
   .appointment-inner {
-    align-items: flex-start;
-
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .appointment-actions {
     flex-direction: row;
-
     align-items: center;
   }
 }
 
-
 /* =========================================================
-   MOBILE
+   MOBILE — 600px
    ========================================================= */
 
 @media (max-width: 600px) {
+  .home-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
 
   .home-container {
     width: calc(100% - 28px);
+    max-width: 100%;
   }
 
-  /* HERO */
+  /* -------------------------------------------------------
+     HERO
+     ------------------------------------------------------- */
+
+  .home-hero {
+    min-height: auto;
+  }
 
   .hero-container {
-    padding-top: 60px;
-    padding-bottom: 55px;
+    width: 100%;
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    padding: 55px 14px 50px;
+  }
+
+  .hero-label-wrap {
+    gap: 8px;
+    margin-bottom: 17px;
   }
 
   .hero-label {
-    font-size: 9px;
+    font-size: 8px;
+    letter-spacing: 0.16em;
   }
 
   .hero-label-line {
-    width: 35px;
+    width: 28px;
   }
 
   .hero-content h1 {
-    font-size: 43px;
+    max-width: 100%;
+
+    font-size: clamp(38px, 11vw, 50px);
+    line-height: 1.04;
 
     letter-spacing: -0.025em;
   }
 
   .hero-description {
-    margin: 22px 0 25px;
+    max-width: 100%;
 
-    font-size: 14px;
+    margin: 20px 0 24px;
 
-    line-height: 1.7;
+    color: #405a62 !important;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.75;
   }
 
+  /* Buttons stack neatly */
   .hero-buttons {
+    width: 100%;
+
     flex-direction: column;
     align-items: stretch;
 
     gap: 10px;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   .home-btn {
     width: 100%;
+    min-height: 50px;
+
+    padding: 0 18px;
+
+    font-size: 10px;
   }
 
+  /* Trust numbers */
   .hero-trust {
+    width: 100%;
+
     justify-content: space-between;
 
     gap: 8px;
@@ -2268,107 +1983,144 @@
   }
 
   .trust-item strong {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .trust-item span {
-    font-size: 7px;
+    max-width: 58px;
+    font-size: 6px;
+    line-height: 1.35;
   }
 
   .trust-divider {
-    height: 32px;
+    height: 30px;
   }
 
-
-  /* DOCTOR HERO */
+  /* -------------------------------------------------------
+     HERO DOCTOR
+     ------------------------------------------------------- */
 
   .hero-doctor-area {
-    min-height: 480px;
+    width: 100%;
+    min-height: 455px;
+
+    margin-top: 35px;
   }
 
   .doctor-glow {
-    width: 330px;
-    height: 330px;
-
+    width: 310px;
+    height: 310px;
     top: 50px;
   }
 
   .doctor-circle {
-    width: 340px;
-    height: 340px;
-
+    width: 315px;
+    height: 315px;
     top: 55px;
   }
 
-  .doctor-image-wrapper {
-    width: min(330px, 82vw);
-    height: 420px;
+  .doctor-circle::before {
+    inset: 18px;
   }
 
+  .doctor-circle::after {
+    inset: 38px;
+  }
+
+  .doctor-image-wrapper {
+    width: min(300px, 78vw);
+    height: 390px;
+
+    border-radius: 160px 160px 12px 12px;
+  }
+
+  .doctor-image-ring {
+    inset: 9px;
+    border-radius: 150px 150px 8px 8px;
+  }
+
+  /* Floating doctor card */
   .doctor-floating-card {
-    right: 0;
-    bottom: 10px;
+    right: -2px;
+    bottom: 5px;
 
-    width: 230px;
+    width: min(215px, 63vw);
 
-    padding: 16px;
+    padding: 14px 15px;
+  }
+
+  .doctor-card-label {
+    font-size: 7px;
   }
 
   .doctor-floating-card h3 {
-    font-size: 17px;
+    margin: 6px 0;
+    font-size: 16px;
   }
 
   .doctor-floating-card p {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .doctor-experience {
-    margin-top: 10px;
+    gap: 7px;
+
+    margin-top: 9px;
     padding-top: 9px;
   }
 
   .doctor-experience span {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .doctor-experience small {
-    font-size: 7px;
+    font-size: 6px;
   }
 
+  /* Floating badges */
   .floating-badge {
-    padding: 7px 10px;
+    padding: 6px 8px;
+    gap: 5px;
 
-    gap: 6px;
+    transform: scale(0.82);
+    transform-origin: center;
   }
 
   .floating-badge span {
-    width: 27px;
-    height: 27px;
+    width: 26px;
+    height: 26px;
+
+    font-size: 12px;
   }
 
   .floating-badge p {
-    font-size: 7px;
+    font-size: 6px;
   }
 
   .badge-one {
-    left: 0;
+    left: -7px;
     top: 90px;
   }
 
   .badge-two {
-    right: 0;
-    top: 50px;
+    right: -5px;
+    top: 42px;
+
+    animation-delay: 1.2s;
   }
 
-
-  /* TRUST */
+  /* -------------------------------------------------------
+     TRUST STRIP
+     ------------------------------------------------------- */
 
   .trust-grid {
     grid-template-columns: 1fr;
   }
 
   .trust-box {
-    min-height: 78px;
+    min-height: 72px;
+
+    padding: 15px 18px;
 
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.09);
@@ -2378,82 +2130,143 @@
     border-bottom: 0;
   }
 
+  .trust-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
 
-  /* WELCOME */
+  .trust-box h3 {
+    font-size: 11px;
+  }
+
+  .trust-box p {
+    font-size: 9px;
+  }
+
+  /* -------------------------------------------------------
+     GENERAL SECTIONS
+     ------------------------------------------------------- */
 
   .welcome-section,
   .services-section,
   .doctor-section {
-    padding: 75px 0;
+    padding: 72px 0;
   }
 
   .section-label {
+    gap: 7px;
+
     font-size: 8px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.13em;
   }
 
   .section-label::before {
-    width: 20px;
+    width: 18px;
   }
 
   .welcome-content h2,
   .section-heading h2,
   .doctor-content h2 {
-    font-size: 37px;
-
     margin-top: 15px;
+    margin-bottom: 18px;
+
+    font-size: clamp(32px, 9vw, 40px);
+    line-height: 1.1;
   }
 
   .welcome-lead {
     font-size: 15px !important;
+    line-height: 1.7 !important;
   }
 
   .welcome-content > p {
     font-size: 13px;
+    line-height: 1.75;
   }
 
-
-  /* VALUES */
+  /* -------------------------------------------------------
+     VALUES
+     ------------------------------------------------------- */
 
   .values-row {
     grid-template-columns: 1fr;
+
+    gap: 10px;
 
     margin-top: 28px;
   }
 
   .value-card {
     min-height: auto;
-
     padding: 20px;
   }
 
+  .value-card h3 {
+    font-size: 20px;
+  }
 
-  /* VISUAL */
+  .value-card p {
+    font-size: 11px;
+  }
+
+  /* -------------------------------------------------------
+     WELCOME VISUAL
+     ------------------------------------------------------- */
 
   .welcome-visual {
-    min-height: 430px;
+    min-height: 425px;
   }
 
   .visual-frame {
-    width: min(350px, 90vw);
-    min-height: 410px;
+    width: min(340px, 88vw);
+    min-height: 405px;
 
-    padding: 38px;
+    padding: 34px 30px;
+
+    box-shadow:
+      16px 16px 0 rgba(8, 127, 130, 0.1);
+  }
+
+  .visual-frame::before {
+    inset: 11px;
+  }
+
+  .visual-symbol {
+    width: 47px;
+    height: 47px;
+    margin-bottom: 25px;
+
+    font-size: 19px;
   }
 
   .visual-content h3 {
-    font-size: 37px;
+    font-size: 35px;
+  }
+
+  .visual-content p {
+    max-width: 210px;
+    font-size: 11px;
   }
 
   .visual-number strong {
-    font-size: 57px;
+    font-size: 55px;
   }
 
+  .visual-number > span {
+    font-size: 23px;
+  }
 
-  /* STATS */
+  .visual-number small {
+    font-size: 7px;
+  }
+
+  /* -------------------------------------------------------
+     STATS
+     ------------------------------------------------------- */
 
   .stats-section {
-    padding: 40px 0;
+    padding: 35px 0;
   }
 
   .stats-grid {
@@ -2462,8 +2275,7 @@
 
   .stat-card {
     min-height: 105px;
-
-    padding: 15px;
+    padding: 14px;
   }
 
   .stat-card:nth-child(2) {
@@ -2472,81 +2284,109 @@
 
   .stat-card:nth-child(3) {
     border-right: 1px solid #dfe7e7;
+    border-top: 1px solid #dfe7e7;
   }
 
   .stat-card:nth-child(4) {
     border-right: 0;
+    border-top: 1px solid #dfe7e7;
+  }
+
+  .stat-card:nth-child(5) {
+    grid-column: 1 / -1;
+
+    border-right: 0;
+    border-top: 1px solid #dfe7e7;
   }
 
   .stat-card strong {
-    font-size: 31px;
+    font-size: 30px;
   }
 
   .stat-card span {
     font-size: 7px;
   }
 
-
-  /* SERVICES */
+  /* -------------------------------------------------------
+     SERVICES
+     ------------------------------------------------------- */
 
   .section-heading {
-    margin-bottom: 35px;
+    margin-bottom: 34px;
   }
 
   .section-heading p {
     font-size: 13px;
+    line-height: 1.75;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
-
     gap: 12px;
   }
 
   .service-card {
-    min-height: 325px;
-
-    padding: 27px;
+    min-height: 310px;
+    padding: 26px;
   }
 
   .service-card h3 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
+  .service-card p {
+    font-size: 11px;
+  }
 
-  /* DOCTOR */
+  .service-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 22px;
+  }
+
+  /* -------------------------------------------------------
+     DOCTOR SECTION
+     ------------------------------------------------------- */
 
   .doctor-grid {
+    grid-template-columns: 1fr;
     gap: 55px;
   }
 
   .doctor-photo-area {
+    width: 100%;
     min-height: 420px;
   }
 
   .doctor-photo-area img {
-    width: 315px;
-    height: 410px;
+    width: min(305px, 80vw);
+    height: 395px;
   }
 
   .doctor-photo-border {
-    width: 315px;
-    height: 410px;
+    width: min(305px, 80vw);
+    height: 395px;
 
-    left: calc(50% - 157px);
+    left: 50%;
+    top: 8px;
 
-    transform: translate(20px, -20px);
+    transform: translateX(calc(-50% + 18px));
+  }
+
+  .doctor-photo-glow {
+    width: 260px;
+    height: 260px;
   }
 
   .doctor-photo-caption {
-    left: 8px;
+    left: 5px;
     bottom: 10px;
 
-    padding: 12px 15px;
+    padding: 11px 14px;
   }
 
   .doctor-photo-caption span {
-    font-size: 7px;
+    font-size: 6px;
   }
 
   .doctor-photo-caption strong {
@@ -2557,115 +2397,37 @@
     font-size: 21px;
   }
 
+  .doctor-qualification {
+    font-size: 10px !important;
+  }
+
   .doctor-content > p:not(.doctor-qualification) {
     font-size: 13px;
+    line-height: 1.75;
   }
 
   .expertise-list {
     grid-template-columns: 1fr;
+    gap: 9px;
+
+    margin: 24px 0 28px;
   }
 
+  .expertise-list div {
+    font-size: 10px;
+  }
 
-  /* CTA */
+  .doctor-button {
+    width: 100%;
+    justify-content: center;
+    min-height: 50px;
+  }
+
+  /* -------------------------------------------------------
+     APPOINTMENT CTA
+     ------------------------------------------------------- */
 
   .appointment-section {
-    padding: 65px 0;
+    padding: 62px 0;
   }
 
-  .appointment-inner h2 {
-    font-size: 38px;
-  }
-
-  .appointment-inner p {
-    font-size: 13px;
-  }
-
-  .appointment-actions {
-    width: 100%;
-
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .appointment-btn {
-    width: 100%;
-  }
-
-  .appointment-phone {
-    padding-left: 2px;
-  }
-}
-
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-  .home-container {
-    width: calc(100% - 22px);
-  }
-
-  .hero-content h1 {
-    font-size: 37px;
-  }
-
-  .hero-trust {
-    gap: 4px;
-  }
-
-  .trust-item strong {
-    font-size: 19px;
-  }
-
-  .trust-item span {
-    font-size: 6px;
-  }
-
-  .doctor-image-wrapper {
-    width: 290px;
-    height: 390px;
-  }
-
-  .doctor-circle {
-    width: 310px;
-    height: 310px;
-  }
-
-  .doctor-floating-card {
-    width: 205px;
-  }
-
-  .doctor-floating-card h3 {
-    font-size: 15px;
-  }
-
-  .visual-frame {
-    padding: 30px;
-  }
-
-  .visual-content h3 {
-    font-size: 33px;
-  }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .home-page *,
-  .home-page *::before,
-  .home-page *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-
-    transition-duration: 0.01ms !important;
-
-    scroll-behavior: auto !important;
-  }
-}
